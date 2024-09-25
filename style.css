@@ -23,3 +23,7 @@ footer{
 button,select{
   padding: 5px 10px;
 }
+
+.chapterSelectionArea {
+  margin-bottom: 20px;
+}

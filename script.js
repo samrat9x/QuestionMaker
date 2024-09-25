@@ -1,76 +1,87 @@
 let printBtn = document.querySelector('#printBtn');
-let footer = document.querySelector('#footer');
         printBtn.style.display = 'none';
-        let chaptersData; // To store chapters data
+        let chaptersData; // Holds the chapters from the fetched JSON file
 
-        // Function to fetch questions from math.json
-        function fetchChapters() {
-            fetch('math.json')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    chaptersData = data.chapters; // Store chapters data
-                    populateChapterSelect(chaptersData); // Populate dropdown
-                })
-                .catch(error => {
-                    console.error('Error fetching the questions:', error);
-                    alert('Error fetching questions. Make sure the JSON file is accessible.');
-                });
+        // Load the subject data (fetch the corresponding JSON file)
+        function loadSubjectData() {
+            const selectedSubject = document.getElementById('subjectSelect').value;
+
+            if (selectedSubject) {
+                fetch(`${selectedSubject}.json`)
+                    .then(response => response.json())
+                    .then(data => {
+                        chaptersData = data.chapters;
+                        populateChapters(chaptersData);
+                    })
+                    .catch(error => {
+                        console.error('Error fetching JSON:', error);
+                    });
+            } else {
+                document.getElementById('chapterSelect').innerHTML = ''; // Clear chapter selection if no subject is chosen
+            }
         }
 
-        // Function to populate chapter dropdown
-        function populateChapterSelect(chapters) {
+        // Populate chapters in the dropdown
+        function populateChapters(chapters) {
             const chapterSelect = document.getElementById('chapterSelect');
+            chapterSelect.innerHTML = ''; // Clear previous options
+
             chapters.forEach(chapter => {
                 const option = document.createElement('option');
-                option.value = chapter.chapter_name; // Use chapter name as value
+                option.value = chapter.chapter_name;
                 option.textContent = chapter.chapter_name;
                 chapterSelect.appendChild(option);
             });
         }
 
-        // Call fetchChapters on page load
-        window.onload = fetchChapters;
-
-        // Function to generate questions based on selected chapter
+        // Generate question paper based on selected chapters and total marks
         function generateQuestions() {
-            const selectedChapterName = document.getElementById('chapterSelect').value;
-            const selectedChapter = chaptersData.find(chapter => chapter.chapter_name === selectedChapterName);
-
+            const selectedChapters = Array.from(document.getElementById('chapterSelect').selectedOptions).map(option => option.value);
+            const totalMarksInput = parseInt(document.getElementById('totalMarksInput').value);
             const questionPaper = document.getElementById('questionPaper');
-            questionPaper.innerHTML = `<h2>${selectedChapterName}</h2>`;
+            questionPaper.innerHTML = ''; // Clear previous content
 
-            if (selectedChapter) {
-                // Shuffle and select questions from the selected chapter
-                let shuffledQuestions = shuffleArray(selectedChapter.questions);
-                let selectedQuestions = shuffledQuestions.slice(0, 10); // Select up to 10 questions
+            if (selectedChapters.length === 0 || isNaN(totalMarksInput) || totalMarksInput <= 0) {
+                alert('Please select at least one chapter and enter valid total marks.');
+                return;
+            }
 
-                // Calculate total marks
-                const totalMarks = selectedQuestions.reduce((sum, questionObj) => sum + questionObj.marks, 0);
-                
-                // Display total marks beside chapter name
-                questionPaper.innerHTML = `<h2>${selectedChapterName} (Total Marks: ${totalMarks})</h2>`;
+            let allSelectedQuestions = [];
 
+            // Get questions from selected chapters
+            selectedChapters.forEach(chapterName => {
+                const selectedChapter = chaptersData.find(chapter => chapter.chapter_name === chapterName);
+                allSelectedQuestions = allSelectedQuestions.concat(selectedChapter.questions);
+            });
+
+            // Shuffle questions and select based on total marks
+            let shuffledQuestions = shuffleArray(allSelectedQuestions);
+            let selectedQuestions = [];
+            let totalMarks = 0;
+
+            for (let i = 0; i < shuffledQuestions.length; i++) {
+                if (totalMarks + shuffledQuestions[i].marks <= totalMarksInput) {
+                    selectedQuestions.push(shuffledQuestions[i]);
+                    totalMarks += shuffledQuestions[i].marks;
+                }
+                if (totalMarks >= totalMarksInput) break;
+            }
+
+            if (totalMarks === totalMarksInput) {
+                questionPaper.innerHTML = `<h2>Question Paper (Total Marks: ${totalMarksInput})</h2>`;
                 selectedQuestions.forEach((questionObj, index) => {
-                    const questionElement = document.createElement('p');
-                    questionElement.innerHTML = `${index + 1}. ${questionObj.question} (${questionObj.marks} marks)`;
-                    questionPaper.appendChild(questionElement);
+                    questionPaper.innerHTML += `<p>${index + 1}. ${questionObj.question} (${questionObj.marks} marks)</p>`;
                 });
-
-                // Render math after adding the questions to the DOM
-                MathJax.typeset();
                 printBtn.style.display = 'inline'; // Show print button
             } else {
-                printBtn.style.display = 'none';
-                questionPaper.innerHTML = '<p style="color:red">Please select a chapter to generate questions.</p>';
+                questionPaper.innerHTML = `<p>Couldn't match the exact total marks. Please try again with different total marks or fewer chapters.</p>`;
             }
+
+            // Re-render math equations using MathJax
+            MathJax.typeset();
         }
 
-        // Function to shuffle the array (Fisher-Yates shuffle algorithm)
+        // Function to shuffle array (Fisher-Yates algorithm)
         function shuffleArray(array) {
             for (let i = array.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
@@ -79,25 +90,12 @@ let footer = document.querySelector('#footer');
             return array;
         }
 
-        // Function to update chapter selection (if needed)
-        function updateChapterSelection() {
-            const selectedChapterName = document.getElementById('chapterSelect').value;
-            if (selectedChapterName) {
-                console.log(`Selected Chapter: ${selectedChapterName}`);
-            }
-        }
-
         // Print Function
         function printThePage() {
             let chapterSelectionArea = document.querySelector('.chapterSelectionArea');
             chapterSelectionArea.style.display = 'none';
-            footer.style.display = 'none';
-            setTimeout(() => {
+            setTimeout(e => {
                 window.print();
-                setTimeout(e=>{
-                  chapterSelectionArea.style.display = 'block';
-
-                footer.style.display = 'block';
-                },500)
-            }, 1);
+                chapterSelectionArea.style.display = 'block';
+            }, 3000);
         }
