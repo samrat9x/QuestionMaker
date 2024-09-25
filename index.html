@@ -31,22 +31,24 @@
 </head>
 <body>
 
-    <h1>Model Test</h1>
+    <h1 id="subjectTitle"></h1> <!-- Placeholder for subject title -->
 
-    <!-- Dropdown to select subject and chapters, and input for total marks -->
+    <!-- Dropdown to select subject and checkboxes for chapters, and input for total marks -->
     <section class="chapterSelectionArea">
         <label for="subjectSelect">Choose a subject:</label>
         <select id="subjectSelect" onchange="loadSubjectData()">
             <option value="">--Select Subject--</option>
             <option value="math">Math</option>
             <option value="physics">Physics</option>
+            <!-- Add more subjects if needed -->
         </select>
 
         <br><br>
 
+        <!-- Checkbox list for chapters -->
         <div id="chapterCheckboxes"></div>
 
-        <br><br>
+        <br>
 
         <label for="totalMarksInput">Enter total marks:</label>
         <input type="number" id="totalMarksInput" placeholder="Enter total marks" min="1">
@@ -59,7 +61,7 @@
     </section>
 
     <!-- Div to display the question paper -->
-    <div id="questionPaper" class="question-paper" contenteditable></div>
+    <div id="questionPaper" class="question-paper"></div>
 
     
     <footer id="footer">
