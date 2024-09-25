@@ -1,14 +1,23 @@
 {
     "chapters": [
         {
-            "chapter_name": "Chapter 1",
+            "chapter_name": "Chapter 2",
             "questions": [
-                { "question": "Define Newton's First Law.", "marks": 5 },
+                { "question": "জড়তা কাকে বলে?", "marks": 1 },
+                { "question": "গতি কাকে বলে?", "marks": 1 },
+                { "question": "স্থিতি কাকে বলে?", "marks": 1 },
+                { "question": "গতি জড়তা কাকে বলে?", "marks": 1 },
+                { "question": "বেগ কাকে বলে?", "marks": 1 },
+                { "question": "দ্রুতি কাকে বলে?", "marks": 1 },
+                { "question": "তাৎক্ষণিক দ্রুতি কাকে বলে?", "marks": 1 },
+                { "question": "সরণ কাকে বলে?", "marks": 1 },
+                { "question": "ত্বরণ কাকে বলে?", "marks": 1 },
+                { "question": "সুষম ত্বরণ কাকে বলে?", "marks": 1 },
                 { "question": "Explain the concept of inertia.", "marks": 10 }
             ]
         },
         {
-            "chapter_name": "Chapter 2",
+            "chapter_name": "Chapter 3",
             "questions": [
                 { "question": "What is kinetic energy?", "marks": 8 },
                 { "question": "State the law of conservation of energy.", "marks": 7 }
