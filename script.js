@@ -68,7 +68,7 @@ let printBtn = document.querySelector('#printBtn');
             }
 
             if (totalMarks === totalMarksInput) {
-                questionPaper.innerHTML = `<h2>${document.getElementById('subjectSelect').value} (মোট নম্বর: ${totalMarksInput})</h2>`;
+                questionPaper.innerHTML = `<h2>${document.getElementById('subjectSelect').value} (Total Marks: ${totalMarksInput})</h2>`;
                 selectedQuestions.forEach((questionObj, index) => {
                     questionPaper.innerHTML += `<p>${index + 1}. ${questionObj.question} (${questionObj.marks} marks)</p>`;
                 });
