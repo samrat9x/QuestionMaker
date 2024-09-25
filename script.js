@@ -78,7 +78,7 @@ function generateQuestions() {
     }
 
     if (totalMarks === totalMarksInput) {
-        questionPaper.innerHTML = `<h2>${selectedSubject} (Total Marks: ${totalMarksInput})</h2>`;
+        questionPaper.innerHTML = `<h6>Total Marks: ${totalMarksInput}</h6>`;
         selectedQuestions.forEach((questionObj, index) => {
             questionPaper.innerHTML += `<p>${index + 1}. ${questionObj.question} (${questionObj.marks} marks)</p>`;
         });
