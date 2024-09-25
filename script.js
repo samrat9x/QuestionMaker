@@ -23,8 +23,8 @@ let printBtn = document.querySelector('#printBtn');
 
         // Populate chapters in the dropdown
         function populateChapters(chapters) {
-            const chapterSelect = document.getElementById('chapterSelect');
-            chapterSelect.innerHTML = ''; // Clear previous options
+            const chapterCheckboxes = document.getElementById('chapterCheckboxes');
+            chapterCheckboxes.innerHTML = ''; // Clear previous checkboxes
 
             chapters.forEach(chapter => {
                 const checkboxLabel = document.createElement('label');
