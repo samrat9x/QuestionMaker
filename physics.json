@@ -1,0 +1,18 @@
+{
+    "chapters": [
+        {
+            "chapter_name": "Chapter 1",
+            "questions": [
+                { "question": "Define Newton's First Law.", "marks": 5 },
+                { "question": "Explain the concept of inertia.", "marks": 10 }
+            ]
+        },
+        {
+            "chapter_name": "Chapter 2",
+            "questions": [
+                { "question": "What is kinetic energy?", "marks": 8 },
+                { "question": "State the law of conservation of energy.", "marks": 7 }
+            ]
+        }
+    ]
+}
