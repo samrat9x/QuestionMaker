@@ -27,10 +27,16 @@ let printBtn = document.querySelector('#printBtn');
             chapterSelect.innerHTML = ''; // Clear previous options
 
             chapters.forEach(chapter => {
-                const option = document.createElement('option');
-                option.value = chapter.chapter_name;
-                option.textContent = chapter.chapter_name;
-                chapterSelect.appendChild(option);
+                const checkboxLabel = document.createElement('label');
+                checkboxLabel.classList.add('chapter-checkbox');
+
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.value = chapter.chapter_name;
+                checkboxLabel.appendChild(checkbox);
+
+                checkboxLabel.appendChild(document.createTextNode(chapter.chapter_name));
+                chapterCheckboxes.appendChild(checkboxLabel);
             });
         }
 
