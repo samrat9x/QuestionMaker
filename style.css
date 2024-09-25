@@ -47,3 +47,7 @@ button,select{
 .chap{
   margin-top: 10px;
 }
+
+#totalMarksInput{
+  padding: 5px;
+}
