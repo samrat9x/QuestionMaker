@@ -20,8 +20,10 @@ footer{
     color: rgba(0,0,0,0.5);
 }
 
-button,select{
+button,input{
   padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 17px;
 }
 
 .chapterSelectionArea {
