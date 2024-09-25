@@ -95,7 +95,7 @@ let footer = document.querySelector('#footer');
             setTimeout(() => {
                 window.print();
                 setTimeout(e=>{
-                  chapterSelectionArea.style.display = 'block';
+                  chapterSelectionArea.style.display = 'flex';
 
                 footer.style.display = 'block';
                 },500)
