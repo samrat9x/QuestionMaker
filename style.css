@@ -20,6 +20,6 @@ footer{
     color: rgba(0,0,0,0.5);
 }
 
-button{
+button,select{
   padding: 5px 10px;
 }
