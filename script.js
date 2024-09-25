@@ -70,7 +70,7 @@ let printBtn = document.querySelector('#printBtn');
             if (totalMarks === totalMarksInput) {
                 questionPaper.innerHTML = `<h2>${document.getElementById('subjectSelect').value} (মোট নম্বর: ${totalMarksInput})</h2>`;
                 selectedQuestions.forEach((questionObj, index) => {
-                    questionPaper.innerHTML += `<p>${index + 1}. ${questionObj.question} <span style="color: red;">  ${questionObj.marks}</span></p>`;
+                    questionPaper.innerHTML += `<p>${index + 1}. ${questionObj.question} (${questionObj.marks} marks)</p>`;
                 });
                 printBtn.style.display = 'inline'; // Show print button
             } else {
