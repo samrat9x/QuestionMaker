@@ -1,7 +1,7 @@
 {
     "chapters": [
       {
-        "chapter_name": "Algebra",
+        "chapter_name": "চলো বৃত্ত চিনি",
         "questions": [
           { "question": "Solve the quadratic equation: \\(x^2 + 5x + 6 = 0\\)", "marks": 3 },
           { "question": "Find the roots of the equation: \\(ax^2 + bx + c = 0\\)", "marks": 4 }
