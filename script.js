@@ -4,7 +4,7 @@ let chaptersData; // Holds the chapters from the fetched JSON file
 
 // Load the subject data (fetch the corresponding JSON file)
 function loadSubjectData() {
-    const selectedSubject = document.getElementById('subjectSelect').value;
+    const selectedSubject = document.querySelector('input[name="subject"]:checked').value;
 
     // Set the subject name in the title
     const subjectTitle = document.getElementById('subjectTitle');
