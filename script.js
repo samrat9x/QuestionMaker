@@ -94,7 +94,7 @@ let footer = document.querySelector('#footer');
             footer.style.display = 'none';
             setTimeout(() => {
                 window.print();
-                chapterSelectionArea.style.display = 'block';
-                footer.style.display = 'block';
+                //chapterSelectionArea.style.display = 'block';
+                //footer.style.display = 'block';
             }, 3000);
         }
