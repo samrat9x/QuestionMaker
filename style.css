@@ -1,4 +1,8 @@
-
+body{
+  min-height: 300px;
+  background-color: bisque;
+  padding: 20px;
+}
 .question-paper {
     margin-top: 20px;
 }
