@@ -17,7 +17,7 @@ let printBtn = document.querySelector('#printBtn');
                         console.error('Error fetching JSON:', error);
                     });
             } else {
-                document.getElementById('chapterSelect').innerHTML = ''; // Clear chapter selection if no subject is chosen
+                document.getElementById('chapterCheckboxes').innerHTML = ''; // Clear chapter selection if no subject is chosen
             }
         }
 
@@ -42,7 +42,7 @@ let printBtn = document.querySelector('#printBtn');
 
         // Generate question paper based on selected chapters and total marks
         function generateQuestions() {
-            const selectedChapters = Array.from(document.getElementById('chapterSelect').selectedOptions).map(option => option.value);
+            const selectedChapters = Array.from(document.getElementById('chapterCheckboxes').selectedOptions).map(option => option.value);
             const totalMarksInput = parseInt(document.getElementById('totalMarksInput').value);
             const questionPaper = document.getElementById('questionPaper');
             questionPaper.innerHTML = ''; // Clear previous content
