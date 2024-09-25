@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name='description' content='Free Web tutorials'>
+    <meta name='keywords' content='HTML CSS JavaScript'>
+    <meta name='author' content='Samrat'>
+    <title>Questions Maker</title>
+    <!--Manual Styles-->
+    <link rel='stylesheet' href='style.css'>
+
+    <!--Favicon-->
+    <link rel='icon' type='image/x-icon' href='/images/favicon.ico'>
+
+    <!-- Google Font (Poppins) -->
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap' rel='stylesheet'>
+
+    <!-- font awesome -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css' integrity='sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==' crossorigin='anonymous' referrerpolicy='no-referrer' />
+
+    <style>*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+        body{
+          height: 100vh;
+          background-color: bisque;
+          padding: 10px;
+        }
+    </style>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+
+    <h1>Model Test</h1>
+
+    <!-- Dropdown to select chapter -->
+    <section class="chapterSelectionArea">
+        <label for="chapterSelect">Choose a chapter:</label>
+        <select id="chapterSelect" onchange="updateChapterSelection()">
+            <option value="">--Select Chapter--</option>
+            <!-- Options will be populated dynamically -->
+        </select>
+
+        <!-- Button to generate questions -->
+        <button onclick="generateQuestions()">Generate Question Paper</button>
+        <button id="printBtn" onclick="printThePage()">Print</button>
+    </section>
+
+    <!-- Div to display the question paper -->
+    <div id="questionPaper" class="question-paper"></div>
+    <footer id="footer">
+        <p>Feel free to use this Question Maker and share with others who need this</p>
+    </footer>
+    <script src='script.js'></script>
+</body>
+</html>

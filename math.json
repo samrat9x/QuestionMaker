@@ -1,0 +1,19 @@
+{
+    "chapters": [
+      {
+        "chapter_name": "Algebra",
+        "questions": [
+          { "question": "Solve the quadratic equation: \\(x^2 + 5x + 6 = 0\\)", "marks": 3 },
+          { "question": "Find the roots of the equation: \\(ax^2 + bx + c = 0\\)", "marks": 4 }
+        ]
+      },
+      {
+        "chapter_name": "Calculus",
+        "questions": [
+          { "question": "What is the derivative of \\(x^2 + 2x\\)?", "marks": 2 },
+          { "question": "Find the integral of \\(\\int \\frac{1}{x} dx\\)", "marks": 5 }
+        ]
+      }
+    ]
+  }
+  
