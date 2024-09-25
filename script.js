@@ -98,6 +98,6 @@ let footer = document.querySelector('#footer');
                   chapterSelectionArea.style.display = 'block';
 
                 footer.style.display = 'block';
-                },1000)
+                },500)
             }, 1);
         }
