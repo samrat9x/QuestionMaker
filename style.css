@@ -24,4 +24,8 @@ footer{
   body{
     background: lightblue;
   }
+  #chapterSelectionArea{
+    display: flex;
+    flex-direction: column;
+  }
 }
