@@ -21,7 +21,7 @@ function loadSubjectData() {
     }
 
     const selectedSubject = document.getElementById('subjectSelect').value;
-  
+
     // Set the subject name in the title
     const subjectTitle = document.getElementById('subjectTitle');
     subjectTitle.textContent = selectedSubject ? `${selectedSubject.charAt(0).toUpperCase() + selectedSubject.slice(1)} Question Paper for ${selectedClass}` : '';
