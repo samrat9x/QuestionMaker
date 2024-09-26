@@ -5,9 +5,7 @@ body{
 }
 .question-paper {
     margin-top: 20px;
-}
-h2, h4 {
-    text-decoration: underline;
+    font-size: 12pt;
 }
 footer{
     font-size: 12px;
@@ -42,5 +40,19 @@ button,input{
   margin-bottom: 20px;
 }
 #subjectTitle{
+  text-align: center;
+}
+.timeandmarks{
+  display: flex;
+  justify-content: space-between;
+}
+.instruction{
+  text-align: center;
+}
+#questionSection{
+  width: 80%;
+  margin: auto;
+}
+.school{
   text-align: center;
 }
