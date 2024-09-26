@@ -33,6 +33,7 @@ function loadSubjectData() {
                 populateChapters(chaptersData); // Populate checkboxes for chapters
             })
             .catch(error => {
+document.getElementById('chapterCheckboxes').innerHTML = ''; // Clear checkboxes if no json file found
                 console.error('Error fetching JSON:', error);
             });
     } else {
