@@ -11,6 +11,7 @@ h2, h4 {
     text-decoration: underline;
 }
 footer{
+    font-size: 12px;
     text-align: center;
     width: 100%;
     color: rgba(0,0,0,0.5);
