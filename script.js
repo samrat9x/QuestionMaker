@@ -122,6 +122,9 @@ function printThePage() {
     chapterSelectionArea.style.display = 'none';
     setTimeout(e => {
         window.print();
-        chapterSelectionArea.style.display = 'block';
-    }, 3000);
+        setTimeout(e=>{
+          chapterSelectionArea.style.display = 'block';
+        },2000)
+        
+    }, 50);
 }
