@@ -8,6 +8,7 @@ function updateClassSelection() {
     selectedClass = document.getElementById('classSelect').value;
     if (!selectedClass) {
         alert('Please select a class.');
+        return;
     }
     loadSubjectData();
 }
