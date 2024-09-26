@@ -119,11 +119,14 @@ function shuffleArray(array) {
 // Print Function
 function printThePage() {
     let chapterSelectionArea = document.querySelector('.chapterSelectionArea');
+    let footer = document.querySelector('footer');
+    footer.style.display = 'none';
     chapterSelectionArea.style.display = 'none';
     setTimeout(e => {
         window.print();
         setTimeout(e=>{
           chapterSelectionArea.style.display = 'block';
+          footer.style.display = 'block';
         },1000)
         
     }, 50);
