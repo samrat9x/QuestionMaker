@@ -17,6 +17,7 @@ function updateClassSelection() {
 function loadSubjectData() {
     if (!selectedClass) {
         alert('Please select a class first.');
+document.getElementById('subjectSelect').selectedIndex = 0;
         return;
     }
 
