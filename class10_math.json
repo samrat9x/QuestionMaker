@@ -1,0 +1,18 @@
+{
+  "chapters": [
+      {
+          "chapter_name": "Chapter 1",
+          "questions": [
+              { "question": "What is 2 + 2?", "marks": 5 },
+              { "question": "Solve for x: 2x + 3 = 7", "marks": 10 }
+          ]
+      },
+      {
+          "chapter_name": "Chapter 2",
+          "questions": [
+              { "question": "Differentiate sin(x)", "marks": 8 },
+              { "question": "What is the derivative of x^2?", "marks": 7 }
+          ]
+      }
+  ]
+}

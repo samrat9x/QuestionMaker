@@ -10,7 +10,6 @@ h2, h4 {
     text-align: center;
     text-decoration: underline;
 }
-
 footer{
     position: absolute;
     bottom: 20px;
@@ -19,23 +18,13 @@ footer{
     left: 0;
     color: rgba(0,0,0,0.5);
 }
-
 button,input{
   padding: 5px 10px;
   border-radius: 10px;
   font-size: 17px;
 }
-
 .chapterSelectionArea {
   margin-bottom: 20px;
-}
-
-.sub,.chap{
-  width: fit-content;
-  border: 1px solid rgba(0,0,0,0.5);
-  border-radius: 10px;
-  padding: 5px 10px;
-  margin-bottom: 10px;
 }
 #chapterCheckboxes {
   margin-bottom: 10px;
@@ -46,10 +35,12 @@ button,input{
 #subjectCheckboxes input{
   margin-right: 2px;
 }
-.chap{
-  margin-top: 10px;
-}
-
 #totalMarksInput{
   padding: 5px;
+}
+.chapter-checkbox {
+  display: block;
+}
+.class-dropdown, .subject-dropdown {
+  margin-bottom: 20px;
 }

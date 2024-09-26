@@ -1,17 +1,31 @@
 let printBtn = document.querySelector('#printBtn');
 printBtn.style.display = 'none';
 let chaptersData; // Holds the chapters from the fetched JSON file
+let selectedClass = ''; // Stores selected class
 
-// Load the subject data (fetch the corresponding JSON file)
+// Update class selection
+function updateClassSelection() {
+    selectedClass = document.getElementById('classSelect').value;
+    if (!selectedClass) {
+        alert('Please select a class.');
+    }
+}
+
+// Load the subject data (fetch the corresponding JSON file based on class and subject)
 function loadSubjectData() {
-    const selectedSubject = document.querySelector('input[name="subject"]:checked').value;
+    if (!selectedClass) {
+        alert('Please select a class first.');
+        return;
+    }
+
+    const selectedSubject = document.getElementById('subjectSelect').value;
 
     // Set the subject name in the title
     const subjectTitle = document.getElementById('subjectTitle');
-    subjectTitle.textContent = selectedSubject ? `${selectedSubject.charAt(0).toUpperCase() + selectedSubject.slice(1)} Question Paper` : '';
+    subjectTitle.textContent = selectedSubject ? `${selectedSubject.charAt(0).toUpperCase() + selectedSubject.slice(1)} Question Paper for ${selectedClass}` : '';
 
     if (selectedSubject) {
-        fetch(`${selectedSubject}.json`)
+        fetch(`${selectedClass}_${selectedSubject}.json`)
             .then(response => response.json())
             .then(data => {
                 chaptersData = data.chapters;
@@ -78,7 +92,7 @@ function generateQuestions() {
     }
 
     if (totalMarks === totalMarksInput) {
-        questionPaper.innerHTML = `<h4>Total Marks: ${totalMarksInput}</h4>`;
+        questionPaper.innerHTML = `<h2>Question Paper (Total Marks: ${totalMarksInput})</h2>`;
         selectedQuestions.forEach((questionObj, index) => {
             questionPaper.innerHTML += `<p>${index + 1}. ${questionObj.question} (${questionObj.marks} marks)</p>`;
         });

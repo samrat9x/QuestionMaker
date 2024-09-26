@@ -34,16 +34,29 @@
    
     <h2 id="subjectTitle"></h2> <!-- Placeholder for subject title -->
 
-    <!-- Subject selection with radio buttons and checkboxes for chapters -->
+    <!-- Class, Subject selection with dropdowns, and checkboxes for chapters -->
     <section class="chapterSelectionArea">
-        <h3 class="sub">Choose a subject:</h3>
-        <div id="subjectCheckboxes">
-            <label class="subject-checkbox"><input type="radio" name="subject" value="math" onchange="loadSubjectData()"> Math</label>
-            <label class="subject-checkbox"><input type="radio" name="subject" value="physics" onchange="loadSubjectData()"> Physics</label>
+        <h4>Choose a class:</h4>
+        <select id="classSelect" class="class-dropdown" onchange="updateClassSelection()">
+            <option value="">--Select Class--</option>
+            <option value="class10">Class 10</option>
+            <option value="class11">Class 11</option>
+            <option value="class12">Class 12</option>
+            <!-- Add more classes as needed -->
+        </select>
+
+        <h4>Choose a subject:</h4>
+        <select id="subjectSelect" class="subject-dropdown" onchange="loadSubjectData()">
+            <option value="">--Select Subject--</option>
+            <option value="math">Math</option>
+            <option value="physics">Physics</option>
             <!-- Add more subjects as needed -->
-        </div>
-        <h3 class="chap">Choose chapters:</h3>
+        </select>
+
+        <h4>Choose chapters:</h4>
         <div id="chapterCheckboxes"></div>
+
+        <br>
 
         <label for="totalMarksInput">Enter total marks:</label>
         <input type="number" id="totalMarksInput" placeholder="Enter total marks" min="1">
