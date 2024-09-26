@@ -7,6 +7,10 @@ body{
     margin-top: 20px;
     font-size: 12pt;
 }
+.final{
+  display: flex;
+  justify-content: space-between;
+}
 footer{
     font-size: 12px;
     text-align: center;

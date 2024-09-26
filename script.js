@@ -105,7 +105,7 @@ function generateQuestions() {
         document.querySelector('.timeandmarks').innerHTML = `<span>সময়—১ ঘন্টা ৪০ মিনিট</span><span>পূর্ণমান—${totalMarksInput}</span>`;
         document.querySelector('.instruction').innerHTML = `<p>[ দ্রষ্টব্যঃ ডান পাশের সংখ্যা প্রশ্নের পূর্ণমান জ্ঞাপক। যেকোনো ৫ টি প্রশ্নের উত্তর দাও। ]</p>`;
         selectedQuestions.forEach((questionObj, index) => {
-            questionPaper.innerHTML += `<p>${index + 1}. ${questionObj.question} (${questionObj.marks} marks)</p>`;
+            questionPaper.innerHTML += `<div class="final"><div><p>${index + 1}. ${questionObj.question}</p></div><div><p>${questionObj.marks}</p></div></div>`;
         });
         printBtn.style.display = 'inline'; // Show print button
     } else {
