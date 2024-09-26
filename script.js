@@ -9,6 +9,7 @@ function updateClassSelection() {
     if (!selectedClass) {
         alert('Please select a class.');
     }
+    loadSubjectData();
 }
 
 // Load the subject data (fetch the corresponding JSON file based on class and subject)
