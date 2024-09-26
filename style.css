@@ -7,7 +7,6 @@ body{
     margin-top: 20px;
 }
 h2, h4 {
-    text-align: center;
     text-decoration: underline;
 }
 footer{
@@ -41,4 +40,7 @@ button,input{
 }
 .class-dropdown, .subject-dropdown {
   margin-bottom: 20px;
+}
+#subjectTitle{
+  text-align: center;
 }

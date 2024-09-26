@@ -8,6 +8,9 @@ function updateClassSelection() {
     selectedClass = document.getElementById('classSelect').value;
     if (!selectedClass) {
         alert('Please select a class.');
+        document.getElementById('subjectSelect').selectedIndex = 0;
+        document.getElementById('chapterCheckboxes').innerHTML = '';
+        document.getElementById('subjectTitle').innerHTML = '';
         return;
     }
     loadSubjectData();
@@ -17,7 +20,9 @@ function updateClassSelection() {
 function loadSubjectData() {
     if (!selectedClass) {
         alert('Please select a class first.');
-document.getElementById('subjectSelect').selectedIndex = 0;
+        document.getElementById('subjectSelect').selectedIndex = 0;
+        document.getElementById('chapterCheckboxes').innerHTML = '';
+        document.getElementById('subjectTitle').innerHTML = '';
         return;
     }
 
@@ -35,7 +40,7 @@ document.getElementById('subjectSelect').selectedIndex = 0;
                 populateChapters(chaptersData); // Populate checkboxes for chapters
             })
             .catch(error => {
-document.getElementById('chapterCheckboxes').innerHTML = ''; // Clear checkboxes if no json file found
+                document.getElementById('chapterCheckboxes').innerHTML = ''; // Clear checkboxes if no json file found
                 console.error('Error fetching JSON:', error);
             });
     } else {
@@ -96,7 +101,7 @@ function generateQuestions() {
     }
 
     if (totalMarks === totalMarksInput) {
-        questionPaper.innerHTML = `<h4>Total Marks: ${totalMarksInput}</h4>`;
+        questionPaper.innerHTML = `<h4 style="text-align: center;">Total Marks: ${totalMarksInput}</h4>`;
         selectedQuestions.forEach((questionObj, index) => {
             questionPaper.innerHTML += `<p>${index + 1}. ${questionObj.question} (${questionObj.marks} marks)</p>`;
         });
