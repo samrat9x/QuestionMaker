@@ -6,7 +6,7 @@
     <meta name='description' content='Question Maker'>
     <meta name='keywords' content='HTML CSS JavaScript'>
     <meta name='author' content='Samrat'>
-    <title>Questions Maker</title>
+    <title>Questions Paper Generator</title>
     <!--Manual Styles-->
     <link rel='stylesheet' href='style.css'>
 
@@ -34,36 +34,41 @@
 
     <!-- Class, Subject selection with dropdowns, and checkboxes for chapters -->
     <section class="chapterSelectionArea">
-        <h4>Choose a class:</h4>
+        <h1>Question Paper Generator</h1>
+        <span>শ্রেণী:</span>
         <select id="classSelect" class="class-dropdown" onchange="updateClassSelection()">
-            <option value="">--Select Class--</option>
-            <option value="class10">দশম</option>
-            <option value="class11">একাদশ</option>
-            <option value="class12">দ্বাদশ</option>
+            <option value="">একটি শ্রেণী নির্বাচন করুন</option>
+            <option value="class10">ষষ্ঠ</option>
+            <option value="class11">সপ্তম</option>
+            <option value="class12">অষ্টম</option>
+            <option value="class12">নবম</option>
+            <option value="class12">দশম</option>
             <!-- Add more classes as needed -->
         </select>
-
-        <h4>Choose a subject:</h4>
+        <br>
+        <span>বিষয়:</span>
         <select id="subjectSelect" class="subject-dropdown" onchange="loadSubjectData()">
-            <option value="">--Select Subject--</option>
+            <option value="">একটি বিষয় নির্বাচন করুন</option>
             <option value="math">গণিত</option>
             <option value="physics">পদার্থবিজ্ঞান</option>
             <!-- Add more subjects as needed -->
         </select>
-
-        <h4>Choose chapters:</h4>
+        <br>
+        <span>অধ্যায়: (একটি বা একাধিক অধ্যায় নির্বাচন করা যাবে)</span>
         <div id="chapterCheckboxes"></div>
 
         <br>
 
-        <label for="totalMarksInput">Enter total marks:</label>
-        <input type="number" id="totalMarksInput" placeholder="Enter total marks" min="1">
+        <label for="totalMarksInput">কত নম্বরের পরীক্ষা নিতে চান?</label>
+        <input type="number" id="totalMarksInput" placeholder="মোট নম্বর" min="1">
 
         <br><br>
 
         <!-- Button to generate questions -->
-        <button onclick="generateQuestions()">Generate Question Paper</button>
-        <button id="printBtn" onclick="printThePage()">Print</button>
+        <button onclick="generateQuestions()">প্রশ্ন তৈরি করতে এখানে ক্লিক করুন</button>
+        <button id="printBtn" onclick="printThePage()">প্রিন্ট করতে এখানে ক্লিক করুন</button>
+        <br>
+        <p id="editable"></p>
     </section>
 
     <section id="questionSection" contenteditable>
@@ -80,6 +85,8 @@
         <br>
         <p>&copy;&nbsp;<a href="https://samrat.top">samrat</a> | 2024</p>
     </footer>
+
+    <div class="message"></div>
     <script src='script.js'></script>
 </body>
 </html>

@@ -4,6 +4,10 @@ body{
   padding: 20px;
   user-select: none;
 }
+h1{
+  text-align: center;
+  padding-bottom: 15px;
+}
 .question-paper {
     margin-top: 20px;
     font-size: 12pt;
@@ -43,6 +47,7 @@ button,input{
 }
 .class-dropdown, .subject-dropdown {
   margin-bottom: 20px;
+  width: 140px;
 }
 #subjectTitle{
   text-align: center;
@@ -61,3 +66,32 @@ button,input{
 .school{
   text-align: center;
 }
+#editable{
+  color: blue;
+}
+
+.message{
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  color: aliceblue;
+  display: none;
+
+  & div{
+    padding: 10px;
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    background-color: rgba(255,0,0,0.5);
+    border: 1px solid white;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+}
+

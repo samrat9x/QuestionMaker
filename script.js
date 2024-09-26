@@ -1,16 +1,34 @@
-let printBtn = document.querySelector('#printBtn');
+// selector functions
+function $(e){
+    return document.querySelector(e);
+}
+function id(e){
+    return document.getElementById(e);
+}
+let printBtn = $('#printBtn');
 printBtn.style.display = 'none';
 let chaptersData; // Holds the chapters from the fetched JSON file
 let selectedClass = ''; // Stores selected class
+let message = $('.message');
+
+window.addEventListener('click',e=>{
+    if(e.target.className === 'message'){
+        message.style.display = 'none';
+    }
+});
+function messages(msg){
+    message.style.display = 'block';
+    message.innerHTML = `<div><p>${msg}</p></div>`;
+}
 
 // Update class selection
 function updateClassSelection() {
-    selectedClass = document.getElementById('classSelect').value;
+    selectedClass = id('classSelect').value;
     if (!selectedClass) {
-        alert('Please select a class.');
-        document.getElementById('subjectSelect').selectedIndex = 0;
-        document.getElementById('chapterCheckboxes').innerHTML = '';
-        document.getElementById('subjectTitle').innerHTML = '';
+        messages('অনুগ্রহপূর্বক একটি শ্রেণী নির্বাচন করুন');
+        id('subjectSelect').selectedIndex = 0;
+        id('chapterCheckboxes').innerHTML = '';
+        id('subjectTitle').innerHTML = '';
         return;
     }
     loadSubjectData();
@@ -19,17 +37,17 @@ function updateClassSelection() {
 // Load the subject data (fetch the corresponding JSON file based on class and subject)
 function loadSubjectData() {
     if (!selectedClass) {
-        alert('Please select a class first.');
-        document.getElementById('subjectSelect').selectedIndex = 0;
-        document.getElementById('chapterCheckboxes').innerHTML = '';
-        document.getElementById('subjectTitle').innerHTML = '';
+        messages('অনুগ্রহপূর্বক প্রথমে একটি শ্রেণী নির্বাচন করুন');
+        id('subjectSelect').selectedIndex = 0;
+        id('chapterCheckboxes').innerHTML = '';
+        id('subjectTitle').innerHTML = '';
         return;
     }
 
-    const selectedSubject = document.getElementById('subjectSelect').value;
+    const selectedSubject = id('subjectSelect').value;
     
     // Set the subject name in the title
-    const subjectTitle = document.getElementById('subjectTitle');
+    const subjectTitle = id('subjectTitle');
     subjectTitle.textContent = selectedSubject ? `${selectedSubject.charAt(0).toUpperCase() + selectedSubject.slice(1)} Question Paper for ${selectedClass}` : '';
 
     if (selectedSubject) {
@@ -40,17 +58,17 @@ function loadSubjectData() {
                 populateChapters(chaptersData); // Populate checkboxes for chapters
             })
             .catch(error => {
-                document.getElementById('chapterCheckboxes').innerHTML = ''; // Clear checkboxes if no json file found
+                id('chapterCheckboxes').innerHTML = ''; // Clear checkboxes if no json file found
                 console.error('Error fetching JSON:', error);
             });
     } else {
-        document.getElementById('chapterCheckboxes').innerHTML = ''; // Clear checkboxes if no subject is chosen
+        id('chapterCheckboxes').innerHTML = ''; // Clear checkboxes if no subject is chosen
     }
 }
 
 // Populate chapter checkboxes
 function populateChapters(chapters) {
-    const chapterCheckboxes = document.getElementById('chapterCheckboxes');
+    const chapterCheckboxes = id('chapterCheckboxes');
     chapterCheckboxes.innerHTML = ''; // Clear previous checkboxes
 
     chapters.forEach(chapter => {
@@ -70,12 +88,12 @@ function populateChapters(chapters) {
 // Generate question paper based on selected chapters and total marks
 function generateQuestions() {
     const selectedChapters = Array.from(document.querySelectorAll('#chapterCheckboxes input:checked')).map(checkbox => checkbox.value);
-    const totalMarksInput = parseInt(document.getElementById('totalMarksInput').value);
-    const questionPaper = document.getElementById('questionPaper');
+    const totalMarksInput = parseInt(id('totalMarksInput').value);
+    const questionPaper = id('questionPaper');
     questionPaper.innerHTML = ''; // Clear previous content
 
     if (selectedChapters.length === 0 || isNaN(totalMarksInput) || totalMarksInput <= 0) {
-        alert('Please select at least one chapter and enter valid total marks.');
+        messages('অনুগ্রহপূর্বক অন্ততপক্ষে একটি অধ্যায় নির্বাচন করুন এবং কত নম্বরের পরীক্ষা নিতে চান সেটি উল্লেখ করুন');
         return;
     }
 
@@ -101,12 +119,13 @@ function generateQuestions() {
     }
 
     if (totalMarks === totalMarksInput) {
-        document.querySelector('.school').innerHTML = `<h1>ফেনী মডেল হাই স্কুল</h1>`;
-        document.querySelector('.timeandmarks').innerHTML = `<span>সময়—১ ঘন্টা ৪০ মিনিট</span><span>পূর্ণমান—${totalMarksInput}</span>`;
-        document.querySelector('.instruction').innerHTML = `<p>[ দ্রষ্টব্যঃ ডান পাশের সংখ্যা প্রশ্নের পূর্ণমান জ্ঞাপক। যেকোনো ৫ টি প্রশ্নের উত্তর দাও। ]</p>`;
+        $('.school').innerHTML = `<h1>ফেনী মডেল হাই স্কুল</h1>`;
+        $('.timeandmarks').innerHTML = `<span>সময়—১ ঘন্টা ৪০ মিনিট</span><span>পূর্ণমান—${totalMarksInput}</span>`;
+        $('.instruction').innerHTML = `<p>[ দ্রষ্টব্যঃ ডান পাশের সংখ্যা প্রশ্নের পূর্ণমান জ্ঞাপক। যেকোনো ৫ টি প্রশ্নের উত্তর দাও। ]</p>`;
         selectedQuestions.forEach((questionObj, index) => {
             questionPaper.innerHTML += `<div class="final"><div><p>${index + 1}. ${questionObj.question}</p></div><div><p>${questionObj.marks}</p></div></div>`;
         });
+        $('#editable').innerText = `প্রশ্নটি এডিট করতে চাইলে প্রশ্নের উপর ক্লিক করুন। এডিট করা শেষে প্রিন্ট করতে প্রিন্ট বাটনে ক্লিক করুন। `;
         printBtn.style.display = 'inline'; // Show print button
     } else {
         questionPaper.innerHTML = `<p>Couldn't match the exact total marks. Please try again with different total marks or fewer chapters.</p>`;
@@ -127,8 +146,8 @@ function shuffleArray(array) {
 
 // Print Function
 function printThePage() {
-    let chapterSelectionArea = document.querySelector('.chapterSelectionArea');
-    let footer = document.querySelector('footer');
+    let chapterSelectionArea = $('.chapterSelectionArea');
+    let footer = $('footer');
     footer.style.display = 'none';
     chapterSelectionArea.style.display = 'none';
     setTimeout(e => {
