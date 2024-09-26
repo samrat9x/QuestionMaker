@@ -124,7 +124,7 @@ function printThePage() {
         window.print();
         setTimeout(e=>{
           chapterSelectionArea.style.display = 'block';
-        },2000)
+        },1000)
         
     }, 50);
 }
