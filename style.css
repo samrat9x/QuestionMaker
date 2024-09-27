@@ -104,6 +104,27 @@ button,input{
   }
 }
 
+.question-block{
+  padding-bottom: 8px;
+}
+
+#answerSheet {
+      display: none;
+}
+
+
+.options{
+  display: inline-flex;
+  flex-direction: row;
+  font-size: 14px;
+  padding-left: 10px;
+  & .child{
+      display: inline-flex;
+      flex-direction: column;
+      padding: 5px;
+  }
+}
+
 
 
 

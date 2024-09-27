@@ -11,7 +11,65 @@
                 "question": "Solve for x: 2x + 3 = 7",
                 "marks": 10 
             }
-          ]
+          ],         
+          "mcq": [
+              {
+                "question": "What is the value of π (Pi) to two decimal places?",
+                "options": {
+                  "A": "3.12",
+                  "B": "3.14",
+                  "C": "3.16",
+                  "D": "3.18"
+                },
+                "correct_answer": "B",
+                "marks": 1
+              },
+              {
+                "question": "What is the derivative of sin(x)?",
+                "options": {
+                  "A": "cos(x)",
+                  "B": "sin(x)",
+                  "C": "-sin(x)",
+                  "D": "-cos(x)"
+                },
+                "correct_answer": "A",
+                "marks": 1
+              },
+              {
+                "question": "Which of the following is a prime number?",
+                "options": {
+                  "A": "4",
+                  "B": "6",
+                  "C": "9",
+                  "D": "11"
+                },
+                "correct_answer": "D",
+                "marks": 1
+              },
+              {
+                "question": "Solve: 5 + 3 × 2 = ?",
+                "options": {
+                  "A": "11",
+                  "B": "16",
+                  "C": "21",
+                  "D": "13"
+                },
+                "correct_answer": "A",
+                "marks": 1
+              },
+              {
+                "question": "What is the area of a circle with radius 7 units? (Use π ≈ 3.14)",
+                "options": {
+                  "A": "154 square units",
+                  "B": "44 square units",
+                  "C": "88 square units",
+                  "D": "49 square units"
+                },
+                "correct_answer": "A",
+                "marks": 1
+              }
+            ]       
+          
       },
       {
           "chapter_name": "২য় অধ্যায়",

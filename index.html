@@ -50,7 +50,7 @@
         <select id="subjectSelect" class="subject-dropdown" onchange="loadSubjectData()">
             <option value="">একটি বিষয় নির্বাচন করুন</option>
             <option value="bangla" disabled>বাংলা</option>
-            <option value="math" disabled>গণিত</option>
+            <option value="math" >গণিত</option>
             <option value="english" disabled>ইংরেজি</option>
             <option value="bgs" disabled>বাংলাদেশ ও বিশ্বপরিচয়</option>
             <option value="science">বিজ্ঞান</option>
@@ -68,6 +68,12 @@
 
         <label for="totalMarksInput">কত নম্বরের পরীক্ষা নিতে চান?</label>
         <input type="number" id="totalMarksInput" placeholder="মোট নম্বর" min="1">
+        <div>
+            <label for="mcq">MCQ</label>
+            <input type="radio" id="mcq" name="questionChecking">
+            <label for="cq">CQ</label>
+            <input type="radio" id="cq" name="questionChecking">
+        </div>
 
         <br><br>
 
@@ -81,11 +87,16 @@
     <section id="questionSection" contenteditable>
         <div class="school"></div>
         <!-- Section to display the question paper -->
-    <h4 id="subjectTitle"></h4> <!-- Placeholder for subject title -->
-    <div class="timeandmarks"></div> <!--time and marks-->
-    <div class="instruction"></div>
-   <div id="questionPaper" class="question-paper"></div>
+        <h4 id="subjectTitle"></h4> <!-- Placeholder for subject title -->
+        <div class="timeandmarks"></div> <!--time and marks-->
+        <div class="instruction"></div>
+        <div id="questionPaper" class="question-paper"></div>
+        <div id="answerSheet">
+            <h3>Answer Sheet : Print করার আগে এটি অবশ্যই সংরক্ষন করুন</h3>
+            <ul id="answers"></ul>
+        </div>
     </section>
+
     
     <footer id="footer">
         <p>Feel free to use this Question Paper Generator and share with others who need this</p>
