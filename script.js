@@ -48,7 +48,7 @@ function loadSubjectData() {
     
     // Set the subject name in the title
     const subjectTitle = id('subjectTitle');
-    subjectTitle.textContent = selectedSubject ? `${selectedSubject.charAt(0).toUpperCase() + selectedSubject.slice(1)} Question Paper for ${selectedClass}` : '';
+    subjectTitle.innerHTML = selectedSubject ? `${selectedSubject.charAt(0).toUpperCase() + selectedSubject.slice(1)}<br>${banglaSerial[selectedClass]} শ্রেণী` : '';
 
     if (selectedSubject) {
         fetch(`${selectedClass}_${selectedSubject}.json`)
@@ -120,12 +120,12 @@ function generateQuestions() {
 
     if (totalMarks === totalMarksInput) {
         $('.school').innerHTML = `<h1>ফেনী মডেল হাই স্কুল</h1>`;
-        $('.timeandmarks').innerHTML = `<span>সময়—১ ঘন্টা ৪০ মিনিট</span><span>পূর্ণমান—${numFixer(totalMarksInput)}</span>`;
+        $('.timeandmarks').innerHTML = `<span>সময়—১ ঘন্টা ৪০ মিনিট</span><span>পূর্ণমান—${banglaNumbers[totalMarksInput]}</span>`;
         $('.instruction').innerHTML = `<p>[ দ্রষ্টব্যঃ ডান পাশের সংখ্যা প্রশ্নের পূর্ণমান জ্ঞাপক। যেকোনো ৫ টি প্রশ্নের উত্তর দাও। ]</p>`;
 
         // main question
         selectedQuestions.forEach((questionObj, index) => {
-            questionPaper.innerHTML += `<div class="final"><div class="interFinal"><span style="padding-right: 2px;">${numFixer(index + 1)}.</span><span>${questionObj.image?`<img src="${questionObj.image}"><br>`:''}${questionObj.question}</span></div><div><p>${numFixer(questionObj.marks)}</p></div></div>`;
+            questionPaper.innerHTML += `<div class="final"><div class="interFinal"><span style="padding-right: 2px;">${banglaNumbers[index + 1]}.</span><span>${questionObj.image?`<img src="${questionObj.image}"><br>`:''}${questionObj.question}</span></div><div><p>${banglaNumbers[questionObj.marks]}</p></div></div>`;
         });
         
 
@@ -173,7 +173,11 @@ const banglaNumbers = [
     "৬১", "৬২", "৬৩", "৬৪", "৬৫", "৬৬", "৬৭", "৬৮", "৬৯", "৭০", "৭১", "৭২", "৭৩", "৭৪", "৭৫", "৭৬", "৭৭", "৭৮", "৭৯", "৮০", 
     "৮১", "৮২", "৮৩", "৮৪", "৮৫", "৮৬", "৮৭", "৮৮", "৮৯", "৯০", "৯১", "৯২", "৯৩", "৯৪", "৯৫", "৯৬", "৯৭", "৯৮", "৯৯", "১০০"
   ];
-  
-function numFixer(e){
-    return banglaNumbers[e];
-}
+const banglaSerial = {
+    class6:'৬ষ্ঠ',
+    class7:'৭ম',
+    class8:'৮ম',
+    class9:'৯ম',
+    class10:'১০ম',
+    
+};
