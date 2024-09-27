@@ -120,12 +120,12 @@ function generateQuestions() {
 
     if (totalMarks === totalMarksInput) {
         $('.school').innerHTML = `<h1>ফেনী মডেল হাই স্কুল</h1>`;
-        $('.timeandmarks').innerHTML = `<span>সময়—১ ঘন্টা ৪০ মিনিট</span><span>পূর্ণমান—${totalMarksInput}</span>`;
+        $('.timeandmarks').innerHTML = `<span>সময়—১ ঘন্টা ৪০ মিনিট</span><span>পূর্ণমান—${numFixer(totalMarksInput)}</span>`;
         $('.instruction').innerHTML = `<p>[ দ্রষ্টব্যঃ ডান পাশের সংখ্যা প্রশ্নের পূর্ণমান জ্ঞাপক। যেকোনো ৫ টি প্রশ্নের উত্তর দাও। ]</p>`;
 
         // main question
         selectedQuestions.forEach((questionObj, index) => {
-            questionPaper.innerHTML += `<div class="final"><div class="interFinal"><span style="padding-right: 2px;">${index + 1}.</span><span>${questionObj.image?`<img src="${questionObj.image}"><br>`:''}${questionObj.question}</span></div><div><p>${questionObj.marks}</p></div></div>`;
+            questionPaper.innerHTML += `<div class="final"><div class="interFinal"><span style="padding-right: 2px;">${numFixer(index + 1)}.</span><span>${questionObj.image?`<img src="${questionObj.image}"><br>`:''}${questionObj.question}</span></div><div><p>${numFixer(questionObj.marks)}</p></div></div>`;
         });
         
 
@@ -165,4 +165,15 @@ function printThePage() {
 }
 
 
-// index convert to bangla
+// index or marks convert to bangla
+const banglaNumbers = [
+    "০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯", "১০", "১১", "১২", "১৩", "১৪", "১৫", "১৬", "১৭", "১৮", "১৯", "২০", 
+    "২১", "২২", "২৩", "২৪", "২৫", "২৬", "২৭", "২৮", "২৯", "৩০", "৩১", "৩২", "৩৩", "৩৪", "৩৫", "৩৬", "৩৭", "৩৮", "৩৯", "৪০", 
+    "৪১", "৪২", "৪৩", "৪৪", "৪৫", "৪৬", "৪৭", "৪৮", "৪৯", "৫০", "৫১", "৫২", "৫৩", "৫৪", "৫৫", "৫৬", "৫৭", "৫৮", "৫৯", "৬০", 
+    "৬১", "৬২", "৬৩", "৬৪", "৬৫", "৬৬", "৬৭", "৬৮", "৬৯", "৭০", "৭১", "৭২", "৭৩", "৭৪", "৭৫", "৭৬", "৭৭", "৭৮", "৭৯", "৮০", 
+    "৮১", "৮২", "৮৩", "৮৪", "৮৫", "৮৬", "৮৭", "৮৮", "৮৯", "৯০", "৯১", "৯২", "৯৩", "৯৪", "৯৫", "৯৬", "৯৭", "৯৮", "৯৯", "১০০"
+  ];
+  
+function numFixer(e){
+    return banglaNumbers[e];
+}
