@@ -36,6 +36,7 @@ function updateClassSelection() {
 
 // Load the subject data (fetch the corresponding JSON file based on class and subject)
 function loadSubjectData() {
+    
     if (!selectedClass) {
         messages('অনুগ্রহপূর্বক প্রথমে একটি শ্রেণী নির্বাচন করুন');
         id('subjectSelect').selectedIndex = 0;
@@ -44,11 +45,11 @@ function loadSubjectData() {
         return;
     }
 
-    const selectedSubject = id('subjectSelect').value;
-    
     // Set the subject name in the title
+    const selectedSubject = id('subjectSelect').value;
+    let subject = id('subjectSelect').options[id('subjectSelect').selectedIndex].text; 
     const subjectTitle = id('subjectTitle');
-    subjectTitle.innerHTML = selectedSubject ? `${selectedSubject.charAt(0).toUpperCase() + selectedSubject.slice(1)}<br>${banglaSerial[selectedClass]} শ্রেণী` : '';
+    subjectTitle.innerHTML = selectedSubject ? `${subject}<br>${banglaSerial[selectedClass]} শ্রেণী` : '';
 
     if (selectedSubject) {
         fetch(`${selectedClass}_${selectedSubject}.json`)
@@ -121,7 +122,7 @@ function generateQuestions() {
     if (totalMarks === totalMarksInput) {
         $('.school').innerHTML = `<h1>ফেনী মডেল হাই স্কুল</h1>`;
         $('.timeandmarks').innerHTML = `<span>সময়—১ ঘন্টা ৪০ মিনিট</span><span>পূর্ণমান—${banglaNumbers[totalMarksInput]}</span>`;
-        $('.instruction').innerHTML = `<p>[ দ্রষ্টব্যঃ ডান পাশের সংখ্যা প্রশ্নের পূর্ণমান জ্ঞাপক। যেকোনো ৫ টি প্রশ্নের উত্তর দাও। ]</p>`;
+        $('.instruction').innerHTML = `<p>[<i> দ্রষ্টব্যঃ ডান পাশের সংখ্যা প্রশ্নের পূর্ণমান জ্ঞাপক। যেকোনো ৫ টি প্রশ্নের উত্তর দাও।</i> ]</p>`;
 
         // main question
         selectedQuestions.forEach((questionObj, index) => {
