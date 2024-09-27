@@ -122,9 +122,13 @@ function generateQuestions() {
         $('.school').innerHTML = `<h1>ফেনী মডেল হাই স্কুল</h1>`;
         $('.timeandmarks').innerHTML = `<span>সময়—১ ঘন্টা ৪০ মিনিট</span><span>পূর্ণমান—${totalMarksInput}</span>`;
         $('.instruction').innerHTML = `<p>[ দ্রষ্টব্যঃ ডান পাশের সংখ্যা প্রশ্নের পূর্ণমান জ্ঞাপক। যেকোনো ৫ টি প্রশ্নের উত্তর দাও। ]</p>`;
+
+        // main question
         selectedQuestions.forEach((questionObj, index) => {
-            questionPaper.innerHTML += `<div class="final"><div><p>${index + 1}. ${questionObj.question}</p></div><div><p>${questionObj.marks}</p></div></div>`;
+            questionPaper.innerHTML += `<div class="final"><div class="interFinal"><span style="padding-right: 2px;">${index + 1}.</span><span>${questionObj.image?`<img src="${questionObj.image}"><br>`:''}${questionObj.question}</span></div><div><p>${questionObj.marks}</p></div></div>`;
         });
+        
+
         $('#editable').innerText = `প্রশ্নটি এডিট করতে চাইলে প্রশ্নের উপর ক্লিক করুন। এডিট করা শেষে প্রিন্ট করতে প্রিন্ট বাটনে ক্লিক করুন। `;
         printBtn.style.display = 'inline'; // Show print button
     } else {
@@ -159,3 +163,6 @@ function printThePage() {
         
     }, 50);
 }
+
+
+// index convert to bangla

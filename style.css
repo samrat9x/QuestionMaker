@@ -16,6 +16,10 @@ h1{
   display: flex;
   justify-content: space-between;
 }
+.interFinal{
+  display: flex;
+  align-items: baseline;
+}
 footer{
     font-size: 12px;
     text-align: center;
@@ -48,6 +52,11 @@ button,input{
 .class-dropdown, .subject-dropdown {
   margin-bottom: 20px;
   width: 140px;
+  background-color: rgba(218, 255, 53, 0.582);
+  padding: 3px;
+}
+#classSelect option, #subjectSelect option{
+  background-color: rgba(255, 99, 99, 0.349);
 }
 #subjectTitle{
   text-align: center;
@@ -94,4 +103,7 @@ button,input{
     transform: translate(-50%,-50%);
   }
 }
+
+
+
 

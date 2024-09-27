@@ -1,0 +1,134 @@
+{
+  "chapters": [
+      {
+          "chapter_name": "১ম অধ্যায়",
+          "questions": [
+              {
+                "question": "What is 2 + 2?",
+                "marks": 5 
+            },
+              {
+                "question": "Solve for x: 2x + 3 = 7",
+                "marks": 10 
+            }
+          ]
+      },
+      {
+          "chapter_name": "২য় অধ্যায়",
+          "questions": [
+              { 
+                "question": "Differentiate sin(x)", 
+                "marks": 8 
+            },
+              { 
+                "question": "What is the derivative of x^2?", 
+                "marks": 7 
+            }
+          ]
+      },
+      {
+          "chapter_name": "৩য় অধ্যায়",
+          "questions": [
+              { 
+                "question": "Differentiate sin(x)", 
+                "marks": 8 
+            },
+              { 
+                "question": "What is the derivative of x^2?", 
+                "marks": 7 
+            }
+          ]
+      },
+      {
+          "chapter_name": "৪র্থ অধ্যায়",
+          "questions": [
+              { 
+                "question": "Differentiate sin(x)", 
+                "marks": 8 
+            },
+              { 
+                "question": "What is the derivative of x^2?", 
+                "marks": 7 
+            }
+          ]
+      },
+      {
+          "chapter_name": "৫ম অধ্যায়",
+          "questions": [
+              { 
+                "question": "Differentiate sin(x)", 
+                "marks": 8 
+            },
+              { 
+                "question": "What is the derivative of x^2?", 
+                "marks": 7 
+            }
+          ]
+      },
+      {
+          "chapter_name": "৬ষ্ঠ অধ্যায়",
+          "questions": [
+              { 
+                "question": "Differentiate sin(x)", 
+                "marks": 8 
+            },
+              { 
+                "question": "What is the derivative of x^2?", 
+                "marks": 7 
+            }
+          ]
+      },
+      {
+          "chapter_name": "৭ম অধ্যায়",
+          "questions": [
+              { 
+                "question": "Differentiate sin(x)", 
+                "marks": 8 
+            },
+              { 
+                "question": "What is the derivative of x^2?", 
+                "marks": 7 
+            }
+          ]
+      },
+      {
+          "chapter_name": "৮ম অধ্যায়",
+          "questions": [
+              { 
+                "question": "Differentiate sin(x)", 
+                "marks": 8 
+            },
+              { 
+                "question": "What is the derivative of x^2?", 
+                "marks": 7 
+            }
+          ]
+      },
+      {
+          "chapter_name": "৯ম অধ্যায়",
+          "questions": [
+              { 
+                "question": "Differentiate sin(x)", 
+                "marks": 8 
+            },
+              { 
+                "question": "What is the derivative of x^2?", 
+                "marks": 7 
+            }
+          ]
+      },
+      {
+          "chapter_name": "১০ম অধ্যায়",
+          "questions": [
+              { "image": "https://www.brainfuse.com/quizUpload/c_108830/CircleFix7.jpg",
+                "question": "r এর মান বের করো।", 
+                "marks": 8 
+            },
+              { 
+                "question": "What is the derivative of x^2?", 
+                "marks": 7 
+            }
+          ]
+      }
+  ]
+}

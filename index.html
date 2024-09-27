@@ -38,19 +38,26 @@
         <span>শ্রেণী:</span>
         <select id="classSelect" class="class-dropdown" onchange="updateClassSelection()">
             <option value="">একটি শ্রেণী নির্বাচন করুন</option>
-            <option value="class10">ষষ্ঠ</option>
-            <option value="class11">সপ্তম</option>
-            <option value="class12">অষ্টম</option>
-            <option value="class12">নবম</option>
-            <option value="class12">দশম</option>
+            <option value="class6" disabled>ষষ্ঠ</option>
+            <option value="class7">সপ্তম</option>
+            <option value="class8" disabled>অষ্টম</option>
+            <option value="class9" disabled>নবম</option>
+            <option value="class10" disabled>দশম</option>
             <!-- Add more classes as needed -->
         </select>
         <br>
         <span>বিষয়:</span>
         <select id="subjectSelect" class="subject-dropdown" onchange="loadSubjectData()">
             <option value="">একটি বিষয় নির্বাচন করুন</option>
+            <option value="bangla" disabled>বাংলা</option>
             <option value="math">গণিত</option>
-            <option value="physics">পদার্থবিজ্ঞান</option>
+            <option value="english" disabled>ইংরেজি</option>
+            <option value="bgs" disabled>বাংলাদেশ ও বিশ্বপরিচয়</option>
+            <option value="science">বিজ্ঞান</option>
+            <option value="islam" disabled>ইসলাম ও নৈতিক শিক্ষা</option>
+            <option value="physics" disabled>পদার্থবিজ্ঞান</option>
+            <option value="chemistry" disabled>রসায়ন</option>
+            <option value="biology" disabled>জীববিজ্ঞান</option>
             <!-- Add more subjects as needed -->
         </select>
         <br>

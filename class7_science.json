@@ -1,7 +1,7 @@
 {
     "chapters": [
         {
-            "chapter_name": "Chapter 2",
+            "chapter_name": "২য় অধ্যায়",
             "questions": [
                 { "question": "জড়তা কাকে বলে?", "marks": 1 },
                 { "question": "গতি কাকে বলে?", "marks": 1 },
@@ -17,7 +17,7 @@
             ]
         },
         {
-            "chapter_name": "Chapter 3",
+            "chapter_name": "৩য় অধ্যায়",
             "questions": [
                 { "question": "What is kinetic energy?", "marks": 8 },
                 { "question": "State the law of conservation of energy.", "marks": 7 }
