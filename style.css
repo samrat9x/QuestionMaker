@@ -11,6 +11,16 @@ h1{
 .question-paper {
     margin-top: 20px;
     font-size: 12pt;
+    display: flex;
+    flex-direction: column;
+}
+.question-paper .part1{
+  width: 50%;
+  border-right: 1px solid rgba(0,0,0,0.5);
+}
+.question-paper .part2{
+  width: 50%;
+  padding-left: 5px;
 }
 .final{
   display: flex;
@@ -70,7 +80,7 @@ button,input{
   text-align: center;
 }
 #questionSection{
-  width: 80%;
+  width: 90%;
   margin: auto;
 }
 .school{
