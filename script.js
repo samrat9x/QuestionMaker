@@ -159,13 +159,21 @@ function generateQuestions() {
             part1.className = 'part1';
             const part2 = document.createElement("div");
             part2.className = 'part2';
+            const part3 = document.createElement("div");
+            part3.className = 'part3';
+            const part4 = document.createElement("div");
+            part4.className = 'part4';
+            const part12holder = document.createElement("div");
+            part12holder.className = 'part12holder';
+            const part34holder = document.createElement("div");
+            part34holder.className = 'part34holder';
 
             selectedMcq.forEach((question, index) => {
                 
                     const questionBlock = document.createElement("div");
                     questionBlock.className = "question-block";
                     questionBlock.innerHTML = `
-                        <p>${banglaNumbers[index + 1]}. ${question}</p>
+                        <p><b>${banglaNumbers[index + 1]}.</b> ${question}</p>
                         <div class="options">
                             <div class="child">
                                 <span>ক) ${shuffledMcq[index].options.A}</span>
@@ -177,23 +185,34 @@ function generateQuestions() {
                             </div>
                         </div>
                     `;
-                if(index<10){
+                if(index<12){
                     part1.appendChild(questionBlock);
-                    questionPaper.appendChild(part1);
-                }else{
+                    part12holder.appendChild(part1);
+                    questionPaper.appendChild(part12holder);
+                }else if(index>=12&&index<24){
                     part2.appendChild(questionBlock);
-                    questionPaper.appendChild(part2);
+                    part12holder.appendChild(part2);
+                    questionPaper.appendChild(part12holder);
+                }else if(index>=24&&index<36){
+                    part3.appendChild(questionBlock);
+                    part34holder.appendChild(part3);
+                    questionPaper.appendChild(part34holder);
+                }else if(index>=36&&index<50){
+                    part4.appendChild(questionBlock);
+                    part34holder.appendChild(part4);
+                    questionPaper.appendChild(part34holder);
                 }
 
     
                 // Fill answer sheet
                 const answerLi = document.createElement("li");
-                answerLi.textContent = `${banglaNumbers[index + 1]} -- ${englishTobangla[shuffledMcq[index].correct_answer]}`;
+                answerLi.className = 'answerList';
+                answerLi.textContent = `${banglaNumbers[index + 1]} -- ${englishTobangla[shuffledMcq[index].correct_answer]},`;
                 id('answers').appendChild(answerLi);
             });
             id('answerSheet').style.display = 'block';
             $('.instruction').innerHTML = '';
-            questionPaper.style.flexDirection = 'row';
+            // questionPaper.style.flexDirection = 'row';
         }
 
         if(cqChecked){
@@ -203,7 +222,7 @@ function generateQuestions() {
             });
 
             $('.instruction').innerHTML = `<p>[<i> দ্রষ্টব্যঃ ডান পাশের সংখ্যা প্রশ্নের পূর্ণমান জ্ঞাপক। যেকোনো ৫ টি প্রশ্নের উত্তর দাও।</i> ]</p>`;
-            questionPaper.style.flexDirection = 'column';
+            // questionPaper.style.flexDirection = 'column';
         }
         
 
@@ -212,7 +231,7 @@ function generateQuestions() {
     } else {
         questionPaper.innerHTML = `<p style="color: red; font-size: 12px; text-align: center;">Couldn't match the exact total marks or some chapters don't have questions. Please try again with different total marks or fewer chapters.</p>`;
         id('answerSheet').style.display = 'none';
-        questionPaper.style.flexDirection = 'column';
+        // questionPaper.style.flexDirection = 'column';
     }
 
     // Re-render math equations using MathJax

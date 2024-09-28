@@ -10,17 +10,22 @@ h1{
 }
 .question-paper {
     margin-top: 20px;
-    font-size: 12pt;
+    font-size: 11pt;
     display: flex;
     flex-direction: column;
 }
-.question-paper .part1{
+.question-paper .part1,.part3{
   width: 50%;
   border-right: 1px solid rgba(0,0,0,0.5);
+  padding: 10px;
 }
-.question-paper .part2{
+.question-paper .part2,.part4{
   width: 50%;
-  padding-left: 5px;
+  padding: 10px;
+}
+.question-paper .part12holder, .part34holder{
+  display: flex;
+  flex-direction: row;
 }
 .final{
   display: flex;
@@ -116,7 +121,7 @@ button,input{
 }
 
 .question-block{
-  padding-bottom: 8px;
+  padding-bottom: 2px;
 }
 
 #answerSheet {
@@ -129,6 +134,9 @@ button,input{
         padding: 5px;
         font-size: 13px;
       }
+}
+.answerList{
+  display: inline-block;
 }
 
 
