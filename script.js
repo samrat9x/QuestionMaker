@@ -150,7 +150,6 @@ function generateQuestions() {
     if (totalMarks === totalMarksInput) {
         $('.school').innerHTML = `<h1>ফেনী মডেল হাই স্কুল</h1>`;
         $('.timeandmarks').innerHTML = `<span>সময়—১ ঘন্টা ৪০ মিনিট</span><span>পূর্ণমান—${banglaNumbers[totalMarksInput]}</span>`;
-        $('.instruction').innerHTML = `<p>[<i> দ্রষ্টব্যঃ ডান পাশের সংখ্যা প্রশ্নের পূর্ণমান জ্ঞাপক। যেকোনো ৫ টি প্রশ্নের উত্তর দাও।</i> ]</p>`;
 
         // main question
         if(mcqChecked){
@@ -183,9 +182,12 @@ function generateQuestions() {
         }
 
         if(cqChecked){
+            id('answerSheet').style.display = 'none';
             selectedQuestions.forEach((questionObj, index) => {
                 questionPaper.innerHTML += `<div class="final"><div class="interFinal"><span style="padding-right: 2px;">${banglaNumbers[index + 1]}.</span><span>${questionObj.image?`<img src="${questionObj.image}"><br>`:''}${questionObj.question}</span></div><div><p>${banglaNumbers[questionObj.marks]}</p></div></div>`;
             });
+
+            $('.instruction').innerHTML = `<p>[<i> দ্রষ্টব্যঃ ডান পাশের সংখ্যা প্রশ্নের পূর্ণমান জ্ঞাপক। যেকোনো ৫ টি প্রশ্নের উত্তর দাও।</i> ]</p>`;
         }
         
 
@@ -193,7 +195,7 @@ function generateQuestions() {
         printBtn.style.display = 'inline'; // Show print button
     } else {
         questionPaper.innerHTML = `<p style="color: red; font-size: 12px; text-align: center;">Couldn't match the exact total marks or some chapters don't have questions. Please try again with different total marks or fewer chapters.</p>`;
-        id('answerSheet').innerHTML = '';
+        id('answerSheet').style.display = 'none';
     }
 
     // Re-render math equations using MathJax
