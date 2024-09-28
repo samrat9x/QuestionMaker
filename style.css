@@ -110,6 +110,13 @@ button,input{
 
 #answerSheet {
       display: none;
+      & #answers{
+        list-style-type: none;
+      }
+      & button{
+        padding: 5px;
+        font-size: 13px;
+      }
 }
 
 

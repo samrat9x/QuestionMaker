@@ -231,6 +231,40 @@ function printThePage() {
     }, 50);
 }
 
+// download answers
+id("downloadBtn").addEventListener("click", function() {
+    // Get the content of the div and replace <li> with newline characters
+    var content = id("answers").innerHTML;
+        
+    // Replace <li> tags with line breaks (newlines)
+    content = content.replace(/<li\s*\/?>/gi, ' ');  // Optional bullet before each list item
+    content = content.replace(/<\/li\s*\/?>/gi, '\n'); // Add a line break after each list item
+
+    // Strip other HTML tags (optional)
+    content = content.replace(/<\/?[^>]+(>|$)/g, "");
+
+    // Create a Blob with the content
+    var blob = new Blob([content], { type: 'text/plain' });
+
+    // Create a temporary link element
+    var link = document.createElement("a");
+
+    // Set the href of the link to a URL representing the Blob object
+    link.href = URL.createObjectURL(blob);
+
+    // Set the download attribute to specify the file name
+    link.download = "mcq_answers.txt";
+
+    // Append the link to the content div
+    id('answers').appendChild(link);
+
+    // Programmatically click the link to trigger the download
+    link.click();
+
+    // Optionally remove the link after the download
+    id('answers').removeChild(link);
+});
+
 
 // index or marks convert to bangla
 const banglaNumbers = [
