@@ -224,8 +224,14 @@ function printThePage() {
         window.print();
         setTimeout(e=>{
           chapterSelectionArea.style.display = 'block';
-          id('answerSheet').style.display = 'block';
           footer.style.display = 'block';
+          if(id('cq').checked){
+            // id('answers').innerHTML = '';
+            id('answerSheet').style.display = 'none';
+          }
+          if(id('mcq').checked){
+            id('answerSheet').style.display = 'block';
+          }
         },1000)
         
     }, 50);
