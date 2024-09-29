@@ -11,7 +11,7 @@
     <link rel='stylesheet' href='style.css'>
 
     <!--Favicon-->
-    <link rel='icon' type='image/x-icon' href='/images/favicon.ico'>
+    <link rel='icon' type='image/x-icon' href='favicon.ico'>
 
     <!-- Google Font (Poppins) -->
     <link rel='preconnect' href='https://fonts.googleapis.com'>
@@ -78,8 +78,22 @@
         <br><br>
 
         <!-- Button to generate questions -->
-        <button onclick="generateQuestions()">প্রশ্ন তৈরি করতে এখানে ক্লিক করুন</button>
-        <button id="printBtn" onclick="printThePage()">প্রিন্ট করতে এখানে ক্লিক করুন</button>
+        <div class="buttons">
+            <button id="printBtn" class="button-82-pushable" role="button" onclick="printThePage()">
+                <span class="button-82-shadow"></span>
+                <span class="button-82-edge"></span>
+                <span class="button-82-front text">
+                    প্রিন্ট করতে এখানে ক্লিক করুন
+                </span>
+            </button>
+            <button class="button-82-pushable" role="button" onclick="generateQuestions()">
+                <span class="button-82-shadow"></span>
+                <span class="button-82-edge"></span>
+                <span class="button-82-front text">
+                    প্রশ্ন তৈরি করতে এখানে ক্লিক করুন
+                </span>
+              </button>
+        </div>
         <br>
         <p id="editable"></p>
     </section>

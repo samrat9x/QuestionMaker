@@ -308,6 +308,21 @@ id("downloadBtn").addEventListener("click", function() {
 });
 
 
+// reload the page if user leaves for 1 minute
+let timer; // Variable to store the timer
+
+// Attach the event listener to the visibilitychange event
+document.addEventListener('visibilitychange', function () {
+    if (document.hidden) {
+        // If the tab is hidden, set a timer for 1 minute (60000 milliseconds)
+        timer = setTimeout(e=>location.reload(), 60000);
+    } else {
+        // If the tab is visible again, clear the timer
+        clearTimeout(timer);
+    }
+});
+
+
 // index or marks convert to bangla
 const banglaNumbers = [
     "০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯", "১০", "১১", "১২", "১৩", "১৪", "১৫", "১৬", "১৭", "১৮", "১৯", "২০", 
