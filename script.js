@@ -341,3 +341,4 @@ const banglaSerial = {
 const englishTobangla = {
     A: 'ক', B: 'খ', C: 'গ', D: 'ঘ'
 };
+
