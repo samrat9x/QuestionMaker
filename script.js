@@ -90,6 +90,7 @@ function populateChapters(chapters) {
 function generateQuestions() {
     const cqChecked = id('cq').checked;
     const mcqChecked = id('mcq').checked;
+    const bothChecked = id('both').checked;
 
     const selectedChapters = Array.from(document.querySelectorAll('#chapterCheckboxes input:checked')).map(checkbox => checkbox.value);
     const totalMarksInput = parseInt(id('totalMarksInput').value);
@@ -116,9 +117,9 @@ function generateQuestions() {
     // console.log(allMcq); // checkpoint 1
 
     // Shuffle questions and select based on total marks
-    let shuffledQuestions = shuffleArray(allSelectedQuestions);
+    let shuffledQuestions = shuffleArray(allSelectedQuestions);//----------cq
     let selectedQuestions = [];
-    let shuffledMcq = shuffleArray(allMcq);
+    let shuffledMcq = shuffleArray(allMcq);//------------mcq
     let selectedMcq = [];
     let totalMarks = 0;
 
@@ -144,8 +145,29 @@ function generateQuestions() {
             if (totalMarks >= totalMarksInput) break;
         }
     }
+    if(bothChecked){
+        totalMarks = 0;
+        for (let i = 0; i < shuffledMcq.length; i++) {
+            if (totalMarks + shuffledMcq[i].marks <= 15) {
+                selectedMcq.push(shuffledMcq[i].question);
+                totalMarks += shuffledMcq[i].marks;
+            }
+            if (totalMarks >= 15){
+                totalMarks = 0;
+                break;
+            }
+        }
+        for (let i = 0; i < shuffledQuestions.length; i++) {
+                selectedQuestions.push(shuffledQuestions[i]);
+                totalMarks += shuffledQuestions[i].marks;
+                if(shuffledQuestions.length === selectedQuestions.length){
+                    totalMarks = 100;
+                }
+        }        
+    }
 
     // console.log(selectedMcq); // checkpoint 2
+    // console.log(selectedQuestions); // checkpoint 2
 
     if (totalMarks === totalMarksInput) {
         $('.school').innerHTML = `<h1>ফেনী মডেল হাই স্কুল</h1>`;
@@ -222,7 +244,75 @@ function generateQuestions() {
             });
 
             $('.instruction').innerHTML = `<p>[<i> দ্রষ্টব্যঃ ডান পাশের সংখ্যা প্রশ্নের পূর্ণমান জ্ঞাপক। যেকোনো ৫ টি প্রশ্নের উত্তর দাও।</i> ]</p>`;
-            // questionPaper.style.flexDirection = 'column';
+        }
+
+        if(bothChecked){
+            $('.timeandmarks').innerHTML = `<span>সময়—৩ ঘন্টা</span><span>পূর্ণমান—${banglaNumbers[totalMarksInput]}</span>`;
+
+            id('answers').innerHTML = ''; 
+
+            const bothMcq = document.createElement("div");
+            bothMcq.className = 'bothMcq';
+
+            selectedMcq.forEach((question, index) => {
+                
+                    const questionBlock = document.createElement("div");
+                    questionBlock.className = "question-block";
+                    questionBlock.innerHTML = `
+                        <p><b>${banglaNumbers[index + 1]}.</b> ${question}</p>
+                        <div class="options">
+                            <div class="child">
+                                <span>ক) ${shuffledMcq[index].options.A}</span>
+                                <span>গ) ${shuffledMcq[index].options.C}</span>
+                            </div>
+                            <div class="child">
+                                <span>খ) ${shuffledMcq[index].options.B}</span> 
+                                <span>ঘ) ${shuffledMcq[index].options.D}</span>
+                            </div>
+                        </div>
+                    `;
+                if(index<15){
+                    bothMcq.appendChild(questionBlock);
+                    questionPaper.appendChild(bothMcq);
+                }
+
+                // Fill answer sheet
+                const answerLi = document.createElement("li");
+                answerLi.className = 'answerList';
+                answerLi.textContent = `${banglaNumbers[index + 1]} -- ${englishTobangla[shuffledMcq[index].correct_answer]},`;
+                id('answers').appendChild(answerLi);
+            });
+            id('answerSheet').style.display = 'block';
+            
+            // entry cq
+            selectedQuestions = shuffleArray(selectedQuestions);
+            const bothMcqShort = document.createElement("div");
+            bothMcqShort.className = 'bothMcqShort';
+            const bothShort = document.createElement("div");
+            bothShort.className = 'bothShort';
+            const bothBrief = document.createElement("div");
+            bothBrief.className = 'bothBrief';
+            let count1 = 1;
+            let count2 = 1;
+            let count3 = 1;
+            for(let questionObj of selectedQuestions){
+                if(questionObj.marks === 1){
+                    bothMcqShort.innerHTML += `<div class="final"><div class="interFinal"><span style="padding-right: 2px;">${banglaNumbers[count1++]}.</span><span>${questionObj.image?`<img src="${questionObj.image}"><br>`:''}${questionObj.question}</span></div><div><p>${banglaNumbers[questionObj.marks]}</p></div></div>`;
+                }
+                if(questionObj.marks === 2){
+                    bothShort.innerHTML += `<div class="final"><div class="interFinal"><span style="padding-right: 2px;">${banglaNumbers[count2++]}.</span><span>${questionObj.image?`<img src="${questionObj.image}"><br>`:''}${questionObj.question}</span></div><div><p>${banglaNumbers[questionObj.marks]}</p></div></div>`;
+                }
+                if(questionObj.marks === 3){
+                    bothBrief.innerHTML += `<div class="final"><div class="interFinal"><span style="padding-right: 2px;">${banglaNumbers[count3++]}.</span><span>${questionObj.image?`<img src="${questionObj.image}"><br>`:''}${questionObj.question}</span></div><div><p>${banglaNumbers[questionObj.marks]}</p></div></div>`;
+                }
+                
+            }
+
+            questionPaper.appendChild(bothMcqShort); // 1
+            questionPaper.appendChild(bothShort); // 2
+            questionPaper.appendChild(bothBrief); // 3
+
+
         }
         
 
@@ -231,7 +321,6 @@ function generateQuestions() {
     } else {
         questionPaper.innerHTML = `<p style="color: red; font-size: 12px; text-align: center;">Couldn't match the exact total marks or some chapters don't have questions. Please try again with different total marks or fewer chapters.</p>`;
         id('answerSheet').style.display = 'none';
-        // questionPaper.style.flexDirection = 'column';
     }
 
     // Re-render math equations using MathJax
@@ -256,9 +345,11 @@ function printThePage() {
     footer.style.display = 'none';
     chapterSelectionArea.style.display = 'none';
     id('answerSheet').style.display = 'none';
+    id('questionSection').classList.add('changeQuesUI');
     setTimeout(e => {
         window.print();
         setTimeout(e=>{
+          id('questionSection').classList.remove('changeQuesUI');
           chapterSelectionArea.style.display = 'block';
           footer.style.display = 'block';
           if(id('cq').checked){
@@ -341,4 +432,12 @@ const banglaSerial = {
 const englishTobangla = {
     A: 'ক', B: 'খ', C: 'গ', D: 'ঘ'
 };
+
+// window onload
+window.onload = e =>{
+    document.querySelectorAll('footer > a')[1].style.opacity = '0.7'; // visitor show
+    id('loading').style.display = "none";
+}
+
+$('.github').addEventListener('click',e=> window.open('https://github.com/samrat9x/QuestionMaker', '_blank'));
 

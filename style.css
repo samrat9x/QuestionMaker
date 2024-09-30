@@ -5,6 +5,25 @@ body{
   user-select: none;
   padding: 20px;
 }
+.github{
+  position: absolute;
+  left: -50px;
+  top: -50px;
+  background-color: white;
+  width: 100px;
+  height: 100px;
+  display: grid;
+  place-items: center ;
+  transform: rotate(45deg);
+  border-radius: 20px;
+  cursor: pointer;
+}
+.github img{
+  width: 30px;
+  transform: rotate(-45deg);
+  position: absolute;
+  right: 5px;
+}
 h1{
   text-align: center;
   padding-bottom: 15px;
@@ -18,7 +37,7 @@ h1{
 }
 .question-paper .part1,.part3{
   width: 50%;
-  border-right: 1px solid rgba(0,0,0,0.5);
+  border-right: 1.2px dashed #a8eb12;
   padding: 10px;
 }
 .question-paper .part2,.part4{
@@ -105,8 +124,18 @@ input:focus{
   text-align: center;
 }
 #questionSection{
-  width: 90%;
+  width: 100%;
+  padding: 5% 10%;
   margin: auto;
+  background-color: #051937;
+  color: #a8eb12;
+  border: 1.2px dashed;
+  border-radius: 10px;
+}
+.changeQuesUI{
+  color: #000 !important;
+  background-color: none !important;
+  border: none !important;
 }
 .school{
   text-align: center;
@@ -146,7 +175,8 @@ input:focus{
 
 #answerSheet {
   width: 300px;
-      display: none;
+  display: none;
+  padding: 10px 0;
       & #answers{
         list-style-type: none;
       }
@@ -171,6 +201,43 @@ input:focus{
       flex-direction: column;
       padding: 5px;
   }
+}
+
+/*visitor counter*/
+footer > a{
+  position: absolute;
+  right: 0;
+  top: 50px;
+  opacity: 0;
+}
+
+/* loader */
+#loading {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 9999;
+  background: #fff;
+  left: 0;
+  top: 0;
+}
+#loading img {
+  position: absolute;
+  width: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#loading p {
+  position: absolute;
+  width: 200px;
+  top: calc(50% + 35px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #484f58;
+  text-align: center;
+  font-weight: bolder;
 }
 
 .buttons{

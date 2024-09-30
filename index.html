@@ -11,7 +11,7 @@
     <link rel='stylesheet' href='style.css'>
 
     <!--Favicon-->
-    <link rel='icon' type='image/x-icon' href='favicon.ico'>
+    <link rel='icon' type='image/x-icon' href='./img/favicon.ico'>
 
     <!-- Google Font (Poppins) -->
     <link rel='preconnect' href='https://fonts.googleapis.com'>
@@ -31,6 +31,15 @@
 
 </head>
 <body>
+
+    <div id="loading">
+        <img src="./img/loading.gif" alt="gif" />
+        <p>One moment please...</p>
+        <!-- Load the page -->
+    </div>
+    <div class="github">
+        <img src="./img/github.png">
+    </div>
 
     <!-- Class, Subject selection with dropdowns, and checkboxes for chapters -->
     <section class="chapterSelectionArea">
@@ -67,12 +76,14 @@
         <br>
 
         <label for="totalMarksInput">কত নম্বরের পরীক্ষা নিতে চান?</label>
-        <input type="number" id="totalMarksInput" placeholder="মোট নম্বর" min="1">
-        <div>
+        <input type="number" id="totalMarksInput" placeholder="মোট নম্বর" min="1" max="100">
+        <div style="padding-top: 10px;">
             <label for="mcq">MCQ</label>
             <input type="radio" id="mcq" name="questionChecking">
             <label for="cq">CQ</label>
             <input type="radio" id="cq" name="questionChecking">
+            <label for="both">BOTH</label>
+            <input type="radio" id="both" name="questionChecking">
         </div>
 
         <br><br>
@@ -99,9 +110,9 @@
     </section>
 
     <section id="questionSection" contenteditable>
-        <div class="school"></div>
+        <div class="school" style="color: #a8eb12;"></div>
         <!-- Section to display the question paper -->
-        <h4 id="subjectTitle"></h4> <!-- Placeholder for subject title -->
+        <h4 id="subjectTitle">The site is under construction. Some features are not available now</h4> <!-- Placeholder for subject title -->
         <div class="timeandmarks"></div> <!--time and marks-->
         <div class="instruction"></div>
         <div id="questionPaper" class="question-paper"></div>
@@ -116,9 +127,16 @@
         <p>Feel free to use this Question Paper Generator and share with others who need this</p>
         <br>
         <p>&copy;&nbsp;<a href="https://samrat.top">samrat</a> | 2024</p>
+
+        <!--visitors checker-->
+        <a href='https://www.free-counters.org/'>https://www.Free-Counters.org</a>
+        <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=902ccb183ee2606836519021bf4c7c7a79838709'></script>
+        <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1241253/t/11"></script>
     </footer>
 
     <div class="message"></div>
+
+   
     
     <script src='script.js'></script>
 </body>

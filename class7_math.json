@@ -5,11 +5,11 @@
       "questions": [
         {
           "question": "What is 2 + 2?",
-          "marks": 5
+          "marks": 1
         },
         {
           "question": "Solve for x: 2x + 3 = 7",
-          "marks": 10
+          "marks": 1
         }
       ],
 
@@ -1785,11 +1785,11 @@
       "questions": [
         {
           "question": "Differentiate sin(x)",
-          "marks": 8
+          "marks": 1
         },
         {
           "question": "What is the derivative of x^2?",
-          "marks": 7
+          "marks": 1
         }
       ]
     },
@@ -1798,11 +1798,11 @@
       "questions": [
         {
           "question": "Differentiate sin(x)",
-          "marks": 8
+          "marks": 2
         },
         {
           "question": "What is the derivative of x^2?",
-          "marks": 7
+          "marks": 2
         }
       ]
     },
@@ -1811,11 +1811,11 @@
       "questions": [
         {
           "question": "Differentiate sin(x)",
-          "marks": 8
+          "marks": 2
         },
         {
           "question": "What is the derivative of x^2?",
-          "marks": 7
+          "marks": 2
         }
       ]
     },
@@ -1824,11 +1824,11 @@
       "questions": [
         {
           "question": "Differentiate sin(x)",
-          "marks": 8
+          "marks": 3
         },
         {
           "question": "What is the derivative of x^2?",
-          "marks": 7
+          "marks": 3
         }
       ]
     },
@@ -1837,11 +1837,11 @@
       "questions": [
         {
           "question": "Differentiate sin(x)",
-          "marks": 8
+          "marks": 3
         },
         {
           "question": "What is the derivative of x^2?",
-          "marks": 7
+          "marks": 3
         }
       ]
     },
@@ -1850,11 +1850,11 @@
       "questions": [
         {
           "question": "Differentiate sin(x)",
-          "marks": 8
+          "marks": 2
         },
         {
           "question": "What is the derivative of x^2?",
-          "marks": 7
+          "marks": 2
         }
       ]
     },
@@ -1863,11 +1863,11 @@
       "questions": [
         {
           "question": "Differentiate sin(x)",
-          "marks": 8
+          "marks": 1
         },
         {
           "question": "What is the derivative of x^2?",
-          "marks": 7
+          "marks": 1
         }
       ]
     },
@@ -1876,11 +1876,11 @@
       "questions": [
         {
           "question": "Differentiate sin(x)",
-          "marks": 8
+          "marks": 2
         },
         {
           "question": "What is the derivative of x^2?",
-          "marks": 7
+          "marks": 1
         }
       ]
     },
@@ -1890,11 +1890,11 @@
         {
           "image": "https://www.brainfuse.com/quizUpload/c_108830/CircleFix7.jpg",
           "question": "r এর মান বের করো।",
-          "marks": 8
+          "marks": 3
         },
         {
           "question": "What is the derivative of x^2?",
-          "marks": 7
+          "marks": 3
         }
       ]
     }
