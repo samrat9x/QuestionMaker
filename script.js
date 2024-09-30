@@ -9,16 +9,11 @@ let printBtn = $('#printBtn');
 printBtn.style.display = 'none';
 let chaptersData; // Holds the chapters from the fetched JSON file
 let selectedClass = ''; // Stores selected class
-let message = $('.message');
 
-window.addEventListener('click',e=>{
-    if(e.target.className === 'message'){
-        message.style.display = 'none';
-    }
-});
+
 function messages(msg){
-    message.style.display = 'block';
-    message.innerHTML = `<div><p>${msg}</p></div>`;
+    $('#message').innerHTML = `<div>${msg}</div>`;
+    id('popup').classList.add('active');
 }
 
 // Update class selection
@@ -297,16 +292,30 @@ function generateQuestions() {
             let count3 = 1;
             for(let questionObj of selectedQuestions){
                 if(questionObj.marks === 1){
-                    bothMcqShort.innerHTML += `<div class="final"><div class="interFinal"><span style="padding-right: 2px;">${banglaNumbers[count1++]}.</span><span>${questionObj.image?`<img src="${questionObj.image}"><br>`:''}${questionObj.question}</span></div><div><p>${banglaNumbers[questionObj.marks]}</p></div></div>`;
+                    bothMcqShort.innerHTML += `<div class="final"><div class="interFinal"><span style="padding-right: 2px;">${banglaNumbers[count1++]}.</span><span>${questionObj.image?`<img src="${questionObj.image}"><br>`:''}${questionObj.question}</span></div><div></div></div>`;
                 }
                 if(questionObj.marks === 2){
-                    bothShort.innerHTML += `<div class="final"><div class="interFinal"><span style="padding-right: 2px;">${banglaNumbers[count2++]}.</span><span>${questionObj.image?`<img src="${questionObj.image}"><br>`:''}${questionObj.question}</span></div><div><p>${banglaNumbers[questionObj.marks]}</p></div></div>`;
+                    bothShort.innerHTML += `<div class="final"><div class="interFinal"><span style="padding-right: 2px;">${banglaNumbers[count2++]}.</span><span>${questionObj.image?`<img src="${questionObj.image}"><br>`:''}${questionObj.question}</span></div><div></div></div>`;
                 }
                 if(questionObj.marks === 3){
-                    bothBrief.innerHTML += `<div class="final"><div class="interFinal"><span style="padding-right: 2px;">${banglaNumbers[count3++]}.</span><span>${questionObj.image?`<img src="${questionObj.image}"><br>`:''}${questionObj.question}</span></div><div><p>${banglaNumbers[questionObj.marks]}</p></div></div>`;
+                    bothBrief.innerHTML += `<div class="final"><div class="interFinal"><span style="padding-right: 2px;">${banglaNumbers[count3++]}.</span><span>${questionObj.image?`<img src="${questionObj.image}"><br>`:''}${questionObj.question}</span></div><div></div></div>`;
                 }
                 
             }
+            const markDistri2 = document.createElement('div');
+            markDistri2.className = 'markDistri2';
+            markDistri2.innerHTML = `<div>এককথায় উত্তর দাও :</div><div>১ × ১০ = ১০</div>`;
+            bothMcqShort.prepend(markDistri2);
+            
+            const markDistri3 = document.createElement('div');
+            markDistri3.className = 'markDistri3';
+            markDistri3.innerHTML = `<div>নিচের প্রশ্নগুলোর উত্তর দাও :</div><div>২ × ১০ = ২০</div>`;
+            bothShort.prepend(markDistri3);
+            
+            const markDistri4 = document.createElement('div');
+            markDistri4.className = 'markDistri4';
+            markDistri4.innerHTML = `<div>যেকোনো তিনটি প্রশ্নের উত্তর দাও :</div><div>৫ × ৩ = ১৫</div>`;
+            bothBrief.prepend(markDistri4);
 
             questionPaper.appendChild(bothMcqShort); // 1
             questionPaper.appendChild(bothShort); // 2
@@ -440,4 +449,10 @@ window.onload = e =>{
 }
 
 $('.github').addEventListener('click',e=> window.open('https://github.com/samrat9x/QuestionMaker', '_blank'));
+
+
+// Function to close the popup
+id('close-popup').addEventListener('click', () => {
+    popup.classList.remove('active'); // Remove the 'active' class to hide the popup
+});
 
