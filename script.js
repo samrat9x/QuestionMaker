@@ -170,6 +170,7 @@ function generateQuestions() {
 
         // main question
         if(mcqChecked){
+            questionPaper.style.flexDirection = 'column';
             id('answers').innerHTML = ''; 
 
             const part1 = document.createElement("div");
@@ -233,6 +234,7 @@ function generateQuestions() {
         }
 
         if(cqChecked){
+            questionPaper.style.flexDirection = 'column';
             id('answerSheet').style.display = 'none';
             selectedQuestions.forEach((questionObj, index) => {
                 questionPaper.innerHTML += `<div class="final"><div class="interFinal"><span style="padding-right: 2px;">${banglaNumbers[index + 1]}.</span><span>${questionObj.image?`<img src="${questionObj.image}"><br>`:''}${questionObj.question}</span></div><div><p>${banglaNumbers[questionObj.marks]}</p></div></div>`;
@@ -242,12 +244,16 @@ function generateQuestions() {
         }
 
         if(bothChecked){
+            questionPaper.style.flexDirection = 'row';
             $('.timeandmarks').innerHTML = `<span>সময়—৩ ঘন্টা</span><span>পূর্ণমান—${banglaNumbers[totalMarksInput]}</span>`;
 
             id('answers').innerHTML = ''; 
 
             const bothMcq = document.createElement("div");
             bothMcq.className = 'bothMcq';
+            const bothMcq2 = document.createElement("div");
+
+            bothMcq.innerHTML = `<div><h3>ক বিভাগ : নৈর্ব্যক্তিক প্রশ্ন—২৫টি (প্রতিটি প্রশ্নের মান ১)</h3></div><div style="display:flex;justify-content:space-between"><div><span style="font-weight:bolder; font-size:11pt;">বহুনির্বাচনী প্রশ্ন : </span>(সঠিক উত্তরটি খাতায় লিখ)</div><div style="margin-right: 10px">১ × ১৫ = ১৫</div></div>`
 
             selectedMcq.forEach((question, index) => {
                 
@@ -266,9 +272,11 @@ function generateQuestions() {
                             </div>
                         </div>
                     `;
-                if(index<15){
+                if(index<12){
                     bothMcq.appendChild(questionBlock);
                     questionPaper.appendChild(bothMcq);
+                }else if(index>=12 && index<15){
+                    bothMcq2.appendChild(questionBlock);
                 }
 
                 // Fill answer sheet
@@ -287,39 +295,51 @@ function generateQuestions() {
             bothShort.className = 'bothShort';
             const bothBrief = document.createElement("div");
             bothBrief.className = 'bothBrief';
+            const bothBroad = document.createElement("div");
+            bothBroad.className = 'bothBroad';
             let count1 = 1;
             let count2 = 1;
             let count3 = 1;
+            let count4 = 1;
             for(let questionObj of selectedQuestions){
                 if(questionObj.marks === 1){
+                    if(count1 === 11) continue;
                     bothMcqShort.innerHTML += `<div class="final"><div class="interFinal"><span style="padding-right: 2px;">${banglaNumbers[count1++]}.</span><span>${questionObj.image?`<img src="${questionObj.image}"><br>`:''}${questionObj.question}</span></div><div></div></div>`;
                 }
                 if(questionObj.marks === 2){
+                    if(count2 === 11) continue;
                     bothShort.innerHTML += `<div class="final"><div class="interFinal"><span style="padding-right: 2px;">${banglaNumbers[count2++]}.</span><span>${questionObj.image?`<img src="${questionObj.image}"><br>`:''}${questionObj.question}</span></div><div></div></div>`;
                 }
                 if(questionObj.marks === 3){
+                    if(count3 === 6) continue;
                     bothBrief.innerHTML += `<div class="final"><div class="interFinal"><span style="padding-right: 2px;">${banglaNumbers[count3++]}.</span><span>${questionObj.image?`<img src="${questionObj.image}"><br>`:''}${questionObj.question}</span></div><div></div></div>`;
+                }
+                if(questionObj.marks === 8){
+                    if(count4 === 9) continue;
+                    bothBroad.innerHTML += `<div class="final"><div class="interFinal"><span style="padding-right: 2px;">${banglaNumbers[count4++]}.</span><span>${questionObj.image?`<img src="${questionObj.image}"><br>`:''}${questionObj.question}</span></div><div></div></div>`;
                 }
                 
             }
             const markDistri2 = document.createElement('div');
             markDistri2.className = 'markDistri2';
-            markDistri2.innerHTML = `<div>এককথায় উত্তর দাও :</div><div>১ × ১০ = ১০</div>`;
+            markDistri2.innerHTML = `<div style="display:flex;justify-content:space-between;"><span style="font-weight:bolder; font-size:11pt;">এককথায় উত্তর দাও :</span><span>১ × ১০ = ১০</span></div>`;
             bothMcqShort.prepend(markDistri2);
             
             const markDistri3 = document.createElement('div');
             markDistri3.className = 'markDistri3';
-            markDistri3.innerHTML = `<div>নিচের প্রশ্নগুলোর উত্তর দাও :</div><div>২ × ১০ = ২০</div>`;
+            markDistri3.innerHTML = `<h3 style="text-align:center;">খ বিভাগ : সংক্ষিপ্ত উত্তর প্রশ্ন</h3><div style="display:flex;justify-content:space-between;"><span style="font-weight:bolder; font-size:11pt;">নিচের প্রশ্নগুলোর উত্তর দাও :</span><span>২ × ১০ = ২০</span></div>`;
             bothShort.prepend(markDistri3);
             
             const markDistri4 = document.createElement('div');
             markDistri4.className = 'markDistri4';
-            markDistri4.innerHTML = `<div>যেকোনো তিনটি প্রশ্নের উত্তর দাও :</div><div>৫ × ৩ = ১৫</div>`;
+            markDistri4.innerHTML =  `<h3 style="text-align:center;">গ বিভাগ : রচনামূলক প্রশ্ন (প্রেক্ষাপটবিহীন)</h3><div style="display:flex;justify-content:space-between;"><span style="font-weight:bolder; font-size:11pt;">যেকোনো তিনটি প্রশ্নের উত্তর দাও :</span><span>৫ × ৩ = ১৫</span></div>`;
             bothBrief.prepend(markDistri4);
 
-            questionPaper.appendChild(bothMcqShort); // 1
-            questionPaper.appendChild(bothShort); // 2
-            questionPaper.appendChild(bothBrief); // 3
+            const bothHolder = document.createElement('div');
+            bothHolder.className = 'bothHolder';
+            bothHolder.append(bothMcq2,bothMcqShort,bothShort,bothBrief);
+
+            questionPaper.append(bothHolder,bothBroad);        
 
 
         }

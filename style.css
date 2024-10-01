@@ -36,11 +36,32 @@ h1{
   padding-bottom: 15px;
   color: #051937;
 }
+
+#questionSection{
+  width: 100%;
+  padding: 1%;
+  margin: auto;
+  background-color: #051937;
+  color: #a8eb12;
+  border: 1.2px dashed;
+  border-radius: 10px;
+}
 .question-paper {
     margin-top: 20px;
-    font-size: 11pt;
+    font-size: 10pt;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+}
+.bothHolder{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-left: 5px;
+}
+.bothMcq{
+  width: 50%;
+  margin-right: 5px;
+  border-right: 1px dashed #00bf72;
 }
 .question-paper .part1,.part3{
   width: 50%;
@@ -138,15 +159,7 @@ input:focus{
 .instruction{
   text-align: center;
 }
-#questionSection{
-  width: 100%;
-  padding: 5% 10%;
-  margin: auto;
-  background-color: #051937;
-  color: #a8eb12;
-  border: 1.2px dashed;
-  border-radius: 10px;
-}
+
 .changeQuesUI{
   color: #000 !important;
   background-color: none !important;
@@ -416,6 +429,5 @@ font-weight: bolder;
 
 
 .markDistri2,.markDistri3,.markDistri4{
-  display: flex;
-  justify-content: space-between;
+  margin-top: 10px;
 }
