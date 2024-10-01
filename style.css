@@ -448,6 +448,7 @@ font-weight: bolder;
   margin: auto;
   font-size: 1rem;
   color: #00bf72;
+  padding-left: 10px;
 }
 .hints p{
   font-size: 1.2rem;
