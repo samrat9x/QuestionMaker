@@ -46,7 +46,7 @@ body{
   border-radius: 10px;
 }
 .question-paper {
-    margin-top: 20px;
+    margin-top: 10px;
     font-size: 10pt;
     display: flex;
     flex-direction: column;
@@ -439,4 +439,10 @@ font-weight: bolder;
   display: flex;
   flex-direction: row;
   height: 900px;
+}
+.hints{
+  width: 300px;
+  margin: auto;
+  font-size: 1rem;
+  color: #00bf72;
 }
