@@ -438,5 +438,5 @@ font-weight: bolder;
 .bigBothHolder{
   display: flex;
   flex-direction: row;
-  height: 880px;
+  height: 900px;
 }

@@ -380,6 +380,7 @@ function printThePage() {
     footer.style.display = 'none';
     chapterSelectionArea.style.display = 'none';
     id('answerSheet').style.display = 'none';
+    $('.github').style.display = 'none';
     id('questionSection').classList.add('changeQuesUI');
     setTimeout(e => {
         window.print();
@@ -387,6 +388,7 @@ function printThePage() {
           id('questionSection').classList.remove('changeQuesUI');
           chapterSelectionArea.style.display = 'block';
           footer.style.display = 'block';
+          $('.github').style.display = 'block';
           if(id('cq').checked){
             // id('answers').innerHTML = '';
             id('answerSheet').style.display = 'none';
