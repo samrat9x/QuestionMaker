@@ -44,12 +44,15 @@ body{
   color: #a8eb12;
   border: 1.2px dashed;
   border-radius: 10px;
+  outline: none;
+  caret-color: #a8eb12;
 }
 .question-paper {
     margin-top: 10px;
     font-size: 10pt;
     display: flex;
     flex-direction: column;
+    padding-bottom: 8px;
 }
 .bothHolder{
   display: flex;
@@ -229,19 +232,19 @@ footer > a{
 }
 #loading img {
   position: absolute;
-  width: 50px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 #loading p {
+  margin-top: 15px;
   position: absolute;
   width: 200px;
   top: calc(50% + 35px);
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #484f58;
+  color: #000000e3;
   text-align: center;
   font-weight: bolder;
 }
@@ -441,8 +444,12 @@ font-weight: bolder;
   height: 900px;
 }
 .hints{
-  width: 300px;
+  width: 350px;
   margin: auto;
   font-size: 1rem;
   color: #00bf72;
+}
+.hints p{
+  font-size: 1.2rem;
+  color: #a8eb12;
 }
