@@ -47,7 +47,8 @@ function loadSubjectData() {
     subjectTitle.innerHTML = selectedSubject ? `${subject}<br>${banglaSerial[selectedClass]} শ্রেণী` : '';
 
     if (selectedSubject) {
-        fetch(`${selectedClass}_${selectedSubject}.json`)
+        let url = `data/${selectedClass}/${selectedClass}_${selectedSubject}.json`;
+        fetch(url)
             .then(response => response.json())
             .then(data => {
                 chaptersData = data.chapters;
