@@ -46,6 +46,7 @@ body{
   border-radius: 10px;
   outline: none;
   caret-color: #a8eb12;
+  min-height: 1px;
 }
 .question-paper {
     margin-top: 10px;
@@ -173,6 +174,7 @@ input:focus{
   background-color: white;
   width: 300px;
   margin: auto;
+  border-radius: 50px;
 }
 #editable{
   color: blue;
@@ -453,4 +455,8 @@ font-weight: bolder;
 .hints p{
   font-size: 1.2rem;
   color: #a8eb12;
+}
+
+#importedImg{
+  width: 200px;
 }
