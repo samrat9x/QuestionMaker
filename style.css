@@ -460,3 +460,8 @@ font-weight: bolder;
 #importedImg{
   width: 200px;
 }
+
+#catagory{
+  display: flex;
+  flex-direction: column;
+}
