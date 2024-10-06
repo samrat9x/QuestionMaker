@@ -29,6 +29,7 @@ body {
   outline: none;
   caret-color: #a8eb12;
   min-height: 1px;
+  overflow-y: auto;
 }
 .question-paper {
   margin-top: 10px;
