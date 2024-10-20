@@ -1,0 +1,428 @@
+{
+  "chapters": [
+    {
+      "chapter_name": "৩য় অধ্যায়",
+      "questions": [],
+      "mcq": [
+        {
+          "question": "(101011.1011)₂ = (?)₁₆",
+          "options": {
+            "A": "2B.C",
+            "B": "2B.B",
+            "C": "3B.B",
+            "D": "2B.C"
+          },
+          "correct_answer": "A",
+          "marks": 1
+        },
+        {
+          "question": "(40.72)₈ = (?)₂",
+          "options": {
+            "A": "100000.111010",
+            "B": "10000.11101",
+            "C": "101011.11101",
+            "D": "10000.111010"
+          },
+          "correct_answer": "D",
+          "marks": 1
+        },
+        {
+          "question": "(1111)₂ + (10000)₂ = (?)₂",
+          "options": {
+            "A": "11111",
+            "B": "1111",
+            "C": "11000",
+            "D": "10000"
+          },
+          "correct_answer": "A",
+          "marks": 1
+        },
+        {
+          "question": "(111)₂ − (101)₂ = (?)₂",
+          "options": {
+            "A": "010",
+            "B": "111",
+            "C": "1000",
+            "D": "10000"
+          },
+          "correct_answer": "A",
+          "marks": 1
+        },
+        {
+          "question": "চিহ্নকৃত সংখ্যার ক্ষেত্রে ধনাত্মক সংখ্যা নির্দেশ করতে অতিরিক্ত কত বিট ধরে হয়?",
+          "options": {
+            "A": "0",
+            "B": "1",
+            "C": "2",
+            "D": "4"
+          },
+          "correct_answer": "A",
+          "marks": 1
+        },
+        {
+          "question": "চিহ্নকৃত সংখ্যার ক্ষেত্রে ঋণাত্মক সংখ্যা নির্দেশ করতে অতিরিক্ত কত বিট ধরে হয়?",
+          "options": {
+            "A": "1",
+            "B": "2",
+            "C": "4",
+            "D": "0"
+          },
+          "correct_answer": "A",
+          "marks": 1
+        },
+        {
+          "question": "01011₂ এর ২ এর পরিপূরক কত?",
+          "options": {
+            "A": "10101",
+            "B": "010",
+            "C": "01011",
+            "D": "001"
+          },
+          "correct_answer": "A",
+          "marks": 1
+        },
+        {
+          "question": "নিম্ন কোন সংখ্যা BCD এর জন্য অন্তর্ভুক্তযোগ্য?",
+          "options": {
+            "A": "0111",
+            "B": "1000",
+            "C": "1011",
+            "D": "0001"
+          },
+          "correct_answer": "B",
+          "marks": 1
+        },
+        {
+          "question": "ASCII কোডে A এর সমতুল্য দশমিক মান কত?",
+          "options": {
+            "A": "65",
+            "B": "66",
+            "C": "67",
+            "D": "97"
+          },
+          "correct_answer": "A",
+          "marks": 1
+        },
+        {
+          "question": "EBCDIC এ মোট কোড প্রশ্ন সংখ্যা কতটি?",
+          "options": {
+            "A": "128",
+            "B": "256",
+            "C": "512",
+            "D": "267"
+          },
+          "correct_answer": "B",
+          "marks": 1
+        },
+        {
+          "question": "গ্যারি বিট কত প্রকার?",
+          "options": {
+            "A": "দুই",
+            "B": "তিন",
+            "C": "চার",
+            "D": "পাঁচ"
+          },
+          "correct_answer": "B",
+          "marks": 1
+        },
+        {
+          "question": "ASCII কোডে ক্রম সংখ্যার অক্ষর ও কিছু চিহ্নের বিটত্ব কত?",
+          "options": {
+            "A": "0–31",
+            "B": "32–64",
+            "C": "65–96",
+            "D": "97–127"
+          },
+          "correct_answer": "A",
+          "marks": 1
+        },
+        {
+          "question": "ASCII কোডে হালকা অক্ষর ও কিছু চিহ্নের বিটত্ব কত?",
+          "options": {
+            "A": "31",
+            "B": "32–64",
+            "C": "65–96",
+            "D": "97–127"
+          },
+          "correct_answer": "D",
+          "marks": 1
+        },
+        {
+          "question": "ASCII সারিতে 0–31 এবং 127 কে কী বলা হয়?",
+          "options": {
+            "A": "প্রধান ক্যারেক্টার",
+            "B": "নিয়ন্ত্রণ ক্যারেক্টার",
+            "C": "বর্ধিত ক্যারেক্টার",
+            "D": "ছোট হাতের অক্ষর"
+          },
+          "correct_answer": "B",
+          "marks": 1
+        },
+        {
+          "question": "ASCII সারিতে 32 এবং 48 কে কী বলা হয়?",
+          "options": {
+            "A": "প্রধান ক্যারেক্টার",
+            "B": "বিশেষ ক্যারেক্টার",
+            "C": "বর্ধিত ক্যারেক্টার",
+            "D": "ছোট হাতের অক্ষর"
+          },
+          "correct_answer": "B",
+          "marks": 1
+        },
+        {
+          "question": "BCD এর বেস কত?",
+          "options": {
+            "A": "2",
+            "B": "4",
+            "C": "8",
+            "D": "16"
+          },
+          "correct_answer": "B",
+          "marks": 1
+        },
+        {
+          "question": "1 + 1 + 1 = 1 এর কারণ কত থাকে?",
+          "options": {
+            "A": "100",
+            "B": "1101",
+            "C": "101",
+            "D": "1110"
+          },
+          "correct_answer": "B",
+          "marks": 1
+        },
+        {
+          "question": "110₂ এবং 70₁₀ এর যোগফল কত?",
+          "options": {
+            "A": "1",
+            "B": "2",
+            "C": "3",
+            "D": "4"
+          },
+          "correct_answer": "B",
+          "marks": 1
+        },
+        {
+          "question": "111.0 এর 2 এর পরিপূরক কত?",
+          "options": {
+            "A": "01",
+            "B": "0",
+            "C": "2",
+            "D": "10"
+          },
+          "correct_answer": "D",
+          "marks": 1
+        },
+        {
+          "question": "সর্বপ্রথম গণনার কাজ কত বছর পূর্বে শুরু হয়?",
+          "options": {
+            "A": "১০০০",
+            "B": "৩০০০",
+            "C": "৫০০০",
+            "D": "৬০০০"
+          },
+          "correct_answer": "B",
+          "marks": 1
+        },
+        {
+          "question": "প্রথম গণনার কাজের জন্য কোন নাম্বার সিস্টেম ব্যবহার করা হয়?",
+          "options": {
+            "A": "Arabic",
+            "B": "Devanagari",
+            "C": "European",
+            "D": "Egyptian Hieroglyphic"
+          },
+          "correct_answer": "D",
+          "marks": 1
+        },
+        {
+          "question": "বেবিলনিয়ান নাম্বার সিস্টেমের ভিত্তি কত ছিল?",
+          "options": {
+            "A": "১০",
+            "B": "২০",
+            "C": "৬০",
+            "D": "৮০"
+          },
+          "correct_answer": "C",
+          "marks": 1
+        },
+        {
+          "question": "শূন্য এর উদ্ভব কোন নাম্বার সিস্টেম থেকে?",
+          "options": {
+            "A": "রোমান",
+            "B": "চাইনিজ",
+            "C": "হিন্দু",
+            "D": "ইউরোপীয়"
+          },
+          "correct_answer": "C",
+          "marks": 1
+        },
+        {
+          "question": "MSB এর পূর্ণরূপ কী?",
+          "options": {
+            "A": "Main Significant Bit",
+            "B": "Most Significant Bit",
+            "C": "Memory Significant Bit",
+            "D": "Memory Specific Bit"
+          },
+          "correct_answer": "B",
+          "marks": 1
+        },
+        {
+          "question": "LSB এর পূর্ণরূপ কী?",
+          "options": {
+            "A": "Lowest Significant Bit",
+            "B": "Low Significant Bit",
+            "C": "Least Significant Bit",
+            "D": "Lowest Simple Bit"
+          },
+          "correct_answer": "A",
+          "marks": 1
+        },
+        {
+          "question": "সংখ্যা পদ্ধতিকে প্রধানত কত ভাগে ভাগ করা যায়?",
+          "options": {
+            "A": "২",
+            "B": "৮",
+            "C": "১০",
+            "D": "১৩"
+          },
+          "correct_answer": "C",
+          "marks": 1
+        },
+        {
+          "question": "বাইনারি সংখ্যা পদ্ধতির ভিত্তি কত?",
+          "options": {
+            "A": "২",
+            "B": "৮",
+            "C": "১০",
+            "D": "১৩"
+          },
+          "correct_answer": "A",
+          "marks": 1
+        },
+        {
+          "question": "অক্টাল সংখ্যা পদ্ধতির ভিত্তি কত?",
+          "options": {
+            "A": "২",
+            "B": "৮",
+            "C": "১০",
+            "D": "১৩"
+          },
+          "correct_answer": "B",
+          "marks": 1
+        },
+        {
+          "question": "হেক্সাডেসিমাল সংখ্যা পদ্ধতির ভিত্তি কত?",
+          "options": {
+            "A": "২",
+            "B": "৮",
+            "C": "১০",
+            "D": "১৬"
+          },
+          "correct_answer": "D",
+          "marks": 1
+        },
+        {
+          "question": "A এর সমতুল্য দশমিক মান কত?",
+          "options": {
+            "A": "৯",
+            "B": "১০",
+            "C": "১১",
+            "D": "১২"
+          },
+          "correct_answer": "B",
+          "marks": 1
+        },
+        {
+          "question": "F এর সমতুল্য দশমিক মান কত?",
+          "options": {
+            "A": "১২",
+            "B": "১৩",
+            "C": "১৪",
+            "D": "১৫"
+          },
+          "correct_answer": "D",
+          "marks": 1
+        },
+        {
+          "question": "ছয় বিট বাইনারির সর্বোচ্চ মানের সমতুল্য দশমিক মান কত?",
+          "options": {
+            "A": "৬০",
+            "B": "৬১",
+            "C": "৬৩",
+            "D": "৬৪"
+          },
+          "correct_answer": "C",
+          "marks": 1
+        },
+        {
+          "question": "তিন ডিজিটের হেক্সাডেসিমাল সংখ্যা পদ্ধতির সর্বোচ্চ মান কত?",
+          "options": {
+            "A": "AAA",
+            "B": "DDD",
+            "C": "FFF",
+            "D": "৯৯৯"
+          },
+          "correct_answer": "C",
+          "marks": 1
+        },
+        {
+          "question": "(২৫)₁₀ এর সমতুল্য বাইনারি কোনটি?",
+          "options": {
+            "A": "১০১১০",
+            "B": "১১০১১",
+            "C": "১০১০১",
+            "D": "১০১১১"
+          },
+          "correct_answer": "A",
+          "marks": 1
+        },
+        {
+          "question": "(৭৫)₁₀ এর সমতুল্য বাইনারি মান কত?",
+          "options": {
+            "A": "১১১১১১",
+            "B": "১০০১০১১",
+            "C": "১০০১০০",
+            "D": "১০১০০১"
+          },
+          "correct_answer": "B",
+          "marks": 1
+        },
+        {
+          "question": "(১০২৪)₁₀ এর সমতুল্য বাইনারি মান কত?",
+          "options": {
+            "A": "১০০০০০০০০০০",
+            "B": "১০০০০০০১০০০",
+            "C": "১০০০০০১১০০",
+            "D": "১০০০১০১০১"
+          },
+          "correct_answer": "A",
+          "marks": 1
+        },
+        {
+          "question": "(AA)₁₆ এর সমতুল্য হেক্সাডেসিমাল মান কী?",
+          "options": {
+            "A": "AB",
+            "B": "BA",
+            "C": "AC",
+            "D": "CA"
+          },
+          "correct_answer": "A",
+          "marks": 1
+        },
+        {
+          "question": "(২৮০)₁₀ এর সমতুল্য মান কত?",
+          "options": {
+            "A": "২৩০",
+            "B": "৪৫০",
+            "C": "৫৬০",
+            "D": "৩৮৪"
+          },
+          "correct_answer": "D",
+          "marks": 1
+        }
+      ]
+    }
+  ]
+}
