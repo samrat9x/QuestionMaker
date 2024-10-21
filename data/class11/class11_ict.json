@@ -421,7 +421,415 @@
           },
           "correct_answer": "D",
           "marks": 1
-        }
+        },
+        {
+        "question": "(64)₁₀ সংখ্যাটির কত বিট বাইনারির প্রয়োজন?",
+        "options": {
+            "A": "৬",
+            "B": "৭",
+            "C": "৮",
+            "D": "৯"
+        },
+        "correct_answer": "C",
+        "marks": 1
+    },
+    {
+        "question": "(10110)₂ এর ২ এর পরিপূরক কত হবে?",
+        "options": {
+            "A": "০১০১১",
+            "B": "০১০১০",
+            "C": "১১১০০",
+            "D": "১০১১০"
+        },
+        "correct_answer": "C",
+        "marks": 1
+    },
+    {
+        "question": "খাদ্যগ্রহণের জন্য চিহ্ন বিটের মান কী হবে?",
+        "options": {
+            "A": "০-১",
+            "B": "০",
+            "C": "১",
+            "D": "২"
+        },
+        "correct_answer": "C",
+        "marks": 1
+    },
+    {
+        "question": "মানবদেহের জন্য চিহ্ন বিটের মান কী হবে?",
+        "options": {
+            "A": "০",
+            "B": "১",
+            "C": "২",
+            "D": "৩"
+        },
+        "correct_answer": "B",
+        "marks": 1
+    },
+    {
+        "question": "BCD এর পূর্ণরূপ কী?",
+        "options": {
+            "A": "Basic Code Division",
+            "B": "Binary Coded Decimal",
+            "C": "Binary Code Decimal",
+            "D": "Basic Code Decimal"
+        },
+        "correct_answer": "B",
+        "marks": 1
+    },
+    {
+        "question": "নিম্নের কোন সংখ্যা BCD কোড নয়?",
+        "options": {
+            "A": "১০১",
+            "B": "০১১০",
+            "C": "১০১১",
+            "D": "০১০১"
+        },
+        "correct_answer": "A",
+        "marks": 1
+    },
+    {
+        "question": "ASCII এর পূর্ণরূপ কী?",
+        "options": {
+            "A": "Australian Standard Code for Information Interchange",
+            "B": "American Standard Code for Information Interchange",
+            "C": "American Standard Code for Information Institute",
+            "D": "Australian Standard Code for Information Institute"
+        },
+        "correct_answer": "B",
+        "marks": 1
+    },
+    {
+        "question": "ASCII-8 বিট কোডের জন্য মোট কতটি কোড তৈরি করা যায়?",
+        "options": {
+            "A": "২৪৮",
+            "B": "১২৮",
+            "C": "২৫৬",
+            "D": "২৫৫"
+        },
+        "correct_answer": "C",
+        "marks": 1
+    },
+    {
+        "question": "ASCII-7 বিট কোডের জন্য মোট কতটি কোড তৈরি করা যায়?",
+        "options": {
+            "A": "১২৭",
+            "B": "১২৮",
+            "C": "১৮৭",
+            "D": "২২৫"
+        },
+        "correct_answer": "A",
+        "marks": 1
+    },
+    {
+        "question": "ASCII কোডে হরফের অংশের ও কিছু চিহ্নের সীমা কত?",
+        "options": {
+            "A": "০-৩১",
+            "B": "৩২-১২৭",
+            "C": "৩২-১২৬",
+            "D": "১২৮-২৫৫"
+        },
+        "correct_answer": "B",
+        "marks": 1
+    },
+    {
+        "question": "EBCDIC এর পূর্ণরূপ কী?",
+        "options": {
+            "A": "Extra Binary Coded Decimal Information Code.",
+            "B": "Extended Binary Coded Decimal Information Code.",
+            "C": "Extra Binary Coded Decimal International Code.",
+            "D": "Extended Binary Coded Decimal International Code."
+        },
+        "correct_answer": "D",
+        "marks": 1
+    },
+    {
+        "question": "-5 এর 2 এর পরিপূরক মান কত?",
+        "options": {
+            "A": "1101",
+            "B": "1001",
+            "C": "1010",
+            "D": "1011"
+        },
+        "correct_answer": "B",
+        "marks": 1
+    },
+    {
+        "question": "(11)₁₀ এর সমকক্ষ বাইনারি কোনটি?",
+        "options": {
+            "A": "১০১১",
+            "B": "১১০০",
+            "C": "১১১১",
+            "D": "১০১০"
+        },
+        "correct_answer": "A",
+        "marks": 1
+    },
+    {
+        "question": "MSB-এর পূর্ণরূপ হলো?",
+        "options": {
+            "A": "Most Suitable Bit",
+            "B": "Most Significant Bit",
+            "C": "Maximum Suitable Bit",
+            "D": "Maximum Significant Bit"
+        },
+        "correct_answer": "B",
+        "marks": 1
+    },
+    {
+        "question": "অষ্টাধশ সংখ্যা পদ্ধতিতে ১৭৯ এর পরের সংখ্যা কত?",
+        "options": {
+            "A": "১৮০",
+            "B": "২০০",
+            "C": "২৭০",
+            "D": "২৫৭"
+        },
+        "correct_answer": "C",
+        "marks": 1
+    },
+    {
+        "question": "(১০১১১১০.১১০১)₂ এর হেক্সাডেসিমাল সংখ্যা কোনটি?",
+        "options": {
+            "A": "DD.1",
+            "B": "DE.1",
+            "C": "DE.8",
+            "D": "ED.8"
+        },
+        "correct_answer": "C",
+        "marks": 1
+    },
+    {
+        "question": "(৭৯)₁₀ এর BCD কোড কোনটি?",
+        "options": {
+            "A": "(১১১০)₂",
+            "B": "(১০১১১)₂",
+            "C": "(১০০১)₂",
+            "D": "(৭৯)₂"
+        },
+        "correct_answer": "B",
+        "marks": 1
+    },
+    {
+        "question": "BCD কোডে নিচেরটি কোনটি?",
+        "options": {
+            "A": "৪",
+            "B": "৮",
+            "C": "১৬",
+            "D": "১১"
+        },
+        "correct_answer": "B",
+        "marks": 1
+    },
+    {
+        "question": "কোন কোড দশমিক সংখ্যাকে বাইনারি সংখ্যায় রূপান্তর করে?",
+        "options": {
+            "A": "ASCII",
+            "B": "EBCDIC",
+            "C": "UNICODE",
+            "D": "BCD"
+        },
+        "correct_answer": "D",
+        "marks": 1
+    },
+    {
+        "question": "(১০০১.১০১১)₂ এর হেক্সাডেসিমাল মান কত?",
+        "options": {
+            "A": "২৫.AC",
+            "B": "৪৫.৫৩",
+            "C": "৩৭.৫৩",
+            "D": "৯৪.AC"
+        },
+        "correct_answer": "A",
+        "marks": 1
+    },
+    {
+        "question": "(১F)₁₆ এর সাথে ১ যোগ করলে কত হবে?",
+        "options": {
+            "A": "(১F)₁₆",
+            "B": "(২F)₁₆",
+            "C": "(২০)₁₆",
+            "D": "(২১)₁₆"
+        },
+        "correct_answer": "D",
+        "marks": 1
+    },
+    {
+        "question": "সংখ্যা লেখা বা পাঠ করার পদ্ধতিকে কী বলে?",
+        "options": {
+            "A": "সংখ্যা পদ্ধতি",
+            "B": "পলিনোমিয়াল সংখ্যা",
+            "C": "বাইনারি",
+            "D": "অষ্টাধশ"
+        },
+        "correct_answer": "A",
+        "marks": 1
+    },
+    {
+        "question": "হেক্সাডেসিমাল ৯ এর পরের সংখ্যাটি কী?",
+        "options": {
+            "A": "A",
+            "B": "B",
+            "C": "C",
+            "D": "D"
+        },
+        "correct_answer": "A",
+        "marks": 1
+    },
+    {
+        "question": "B এর সমতুল্য মান কত?",
+        "options": {
+            "A": "১০",
+            "B": "১১",
+            "C": "১২",
+            "D": "১৩"
+        },
+        "correct_answer": "B",
+        "marks": 1
+    },
+    {
+        "question": "E এর সমতুল্য দশমিক মান কত?",
+        "options": {
+            "A": "১০",
+            "B": "১১",
+            "C": "১২",
+            "D": "১৪"
+        },
+        "correct_answer": "C",
+        "marks": 1
+    },
+    {
+        "question": "(১১০১)₂ = (?)₁₀?",
+        "options": {
+            "A": "৯",
+            "B": "১১",
+            "C": "১৩",
+            "D": "১৫"
+        },
+        "correct_answer": "C",
+        "marks": 1
+    },
+    {
+        "question": "চার ডিজিটের বাইনারির সর্বোচ্চ সংখ্যা কোনটি?",
+        "options": {
+            "A": "১০০০",
+            "B": "১১১১",
+            "C": "১০১০",
+            "D": "১১০০"
+        },
+        "correct_answer": "B",
+        "marks": 1
+    },
+    {
+        "question": "১০১০ এর মান কত?",
+        "options": {
+            "A": "১০০১০",
+            "B": "০১০১০",
+            "C": "১০১১১",
+            "D": "১০১০০"
+        },
+        "correct_answer": "A",
+        "marks": 1
+    },
+    {
+        "question": "অষ্টাধশ সংখ্যা পদ্ধতিতে সর্বোচ্চ অঙ্কের পরবর্তী সংখ্যা কত?",
+        "options": {
+            "A": "৮",
+            "B": "৯",
+            "C": "১০",
+            "D": "১১"
+        },
+        "correct_answer": "C",
+        "marks": 1
+    },
+    {
+        "question": "(১১১১১)₂ এর পরবর্তী সংখ্যা কত?",
+        "options": {
+            "A": "১১১১১০",
+            "B": "১০০০০০",
+            "C": "১০১০০০",
+            "D": "১০০০০১"
+        },
+        "correct_answer": "B",
+        "marks": 1
+    },
+    {
+        "question": "(১০০)₁₀ এর সমতুল্য হেক্সাডেসিমাল মান কত?",
+        "options": {
+            "A": "৬০",
+            "B": "৬৩",
+            "C": "৮০",
+            "D": "১০০"
+        },
+        "correct_answer": "C",
+        "marks": 1
+    },
+    {
+        "question": "(AA)₁₆ এর পরের সংখ্যাটি কত?",
+        "options": {
+            "A": "AA০",
+            "B": "AA3",
+            "C": "AB",
+            "D": "AF"
+        },
+        "correct_answer": "C",
+        "marks": 1
+    },
+    {
+        "question": "FF এর পরের সংখ্যাটি কত?",
+        "options": {
+            "A": "FE",
+            "B": "FF0",
+            "C": "১০০",
+            "D": "১০১"
+        },
+        "correct_answer": "C",
+        "marks": 1
+    },
+    {
+        "question": "FF এর আগের সংখ্যাটি কত?",
+        "options": {
+            "A": "F0",
+            "B": "FE",
+            "C": "FD",
+            "D": "EE"
+        },
+        "correct_answer": "B",
+        "marks": 1
+    },
+    {
+        "question": "(১১০১)₂ = (?)₁₆?",
+        "options": {
+            "A": "A",
+            "B": "B",
+            "C": "C",
+            "D": "D"
+        },
+        "correct_answer": "D",
+        "marks": 1
+    },
+    {
+        "question": "(FFF)₁₆ এর পরের সংখ্যা কী?",
+        "options": {
+            "A": "FFFF",
+            "B": "FFFE",
+            "C": "১০০০",
+            "D": "FFF1"
+        },
+        "correct_answer": "A",
+        "marks": 1
+    },
+    {
+        "question": "(101011.1011)₂ = (?)₈?",
+        "options": {
+            "A": "53.54",
+            "B": "53.51",
+            "C": "223.51",
+            "D": "223.23"
+        },
+        "correct_answer": "B",
+        "marks": 1
+    }
+
       ]
     }
   ]
