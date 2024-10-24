@@ -1,6 +1,276 @@
 {
   "chapters": [
     {
+      "chapter_name": "1m অধ্যায়",
+      "questions": [],
+      "mcq": [
+        {
+          "question": "ন্যানো বা প্রোটো ফিউচারের উদ্ভাবক কে ছিলেন?",
+          "options": {
+            "A": "I.S. Cooper",
+            "B": "Jack Williamson",
+            "C": "Marshall McLuhan",
+            "D": "K. Eric Drexler"
+          },
+          "correct_answer": "B",
+          "marks": 1
+        },
+        {
+          "question": "গ্যালাক্সি প্রিন্সটন বিশ্ববিদ্যালয়ের অধ্যাপক ছিলেন?",
+          "options": {
+            "A": "শিকাগো বিশ্ববিদ্যালয়ের অধ্যাপক",
+            "B": "আমেরিকার প্রিন্সটন বিশ্ববিদ্যালয়ের",
+            "C": "আসিয়ার প্রিন্সটন বিশ্ববিদ্যালয়",
+            "D": "কানাডার ম্যাকগিল বিশ্ববিদ্যালয়"
+          },
+          "correct_answer": "D",
+          "marks": 1
+        },
+        {
+          "question": "ম্যাকলুহান ১৯৬২ সালে যে গ্রন্থটি রচনা করেন তার নাম কী?",
+          "options": {
+            "A": "Understanding Media",
+            "B": "The Gutenberg Galaxy",
+            "C": "The Global Village",
+            "D": "Engines of Creation"
+          },
+          "correct_answer": "B",
+          "marks": 1
+        },
+        {
+          "question": "ম্যাকলুহান ১৯৬৪ সালে যে গ্রন্থটি রচনা করেন তার নাম কী?",
+          "options": {
+            "A": "Understanding Media",
+            "B": "The Gutenberg Galaxy",
+            "C": "The Global Village",
+            "D": "Engines of Creation"
+          },
+          "correct_answer": "A",
+          "marks": 1
+        },
+        {
+          "question": "ম্যাকলুহান জন্মগ্রহণ করেন—",
+          "options": {
+            "A": "১৯১১ সালের ২৫শে জুন",
+            "B": "১৯১১ সালের ২৫শে জুলাই",
+            "C": "১৯২২ সালের ২৫শে জুন",
+            "D": "১৯১১ সালের ২৫শে আগস্ট"
+          },
+          "correct_answer": "B",
+          "marks": 1
+        },
+        {
+          "question": "ম্যাকলুহান মৃত্যুবরণ করেন—",
+          "options": {
+            "A": "১৯৮০ সালের ৩১শে ডিসেম্বর",
+            "B": "১৯৮০ সালের ৩০শে ডিসেম্বর",
+            "C": "১৯৮৫ সালের ৩১শে ডিসেম্বর",
+            "D": "১৯৭৫ সালের ৩১শে ডিসেম্বর"
+          },
+          "correct_answer": "A",
+          "marks": 1
+        },
+        {
+          "question": "\"The medium is the message\" এর প্রবর্তক ছিলেন—",
+          "options": {
+            "A": "A.S. Lee",
+            "B": "Marshall McLuhan",
+            "C": "I.S. Cooper",
+            "D": "John McCarthy"
+          },
+          "correct_answer": "B",
+          "marks": 1
+        },
+        {
+          "question": "বিশ্বকে তুলনা করা হয়—",
+          "options": {
+            "A": "একটি শহরের সাথে",
+            "B": "একটি গ্রামের সাথে",
+            "C": "একটি জেলার সাথে",
+            "D": "একটি উপসাগরের সাথে"
+          },
+          "correct_answer": "B",
+          "marks": 1
+        },
+        {
+          "question": "ডিজিটাল তথ্যের ব্যবস্থা কোনটি?",
+          "options": {
+            "A": "ই-মেইল",
+            "B": "টেলেক্স",
+            "C": "ফ্যাক্স",
+            "D": "ই-লার্নিং"
+          },
+          "correct_answer": "A",
+          "marks": 1
+        },
+        {
+          "question": "টেলিফোনকার্ডের উদ্ভাবন করেন কে?",
+          "options": {
+            "A": "স্যামসন",
+            "B": "যদি টাকার",
+            "C": "ডি বার্নার",
+            "D": "হার্বাট বায়ার"
+          },
+          "correct_answer": "C",
+          "marks": 1
+        },
+        {
+          "question": "ভিসা কার্ডধারীর এর জন্য ব্যবহৃত সফটওয়্যার –",
+          "options": {
+            "A": "মাস্টার",
+            "B": "yahoo.com",
+            "C": "gmail.com",
+            "D": "facebook.com"
+          },
+          "correct_answer": "B",
+          "marks": 1
+        },
+        {
+          "question": "নিম্নের কোন সিস্টেমটি বিমানের সিটি রিজার্ভেশনের জন্য ব্যবহৃত হয়?",
+          "options": {
+            "A": "NASA",
+            "B": "SABRE",
+            "C": "Internet",
+            "D": "ODesk"
+          },
+          "correct_answer": "B",
+          "marks": 1
+        },
+        {
+          "question": "নিম্নের কোন ওয়েবসাইটটি চাকরির বিজ্ঞাপন দেয়া হয়?",
+          "options": {
+            "A": "bdjobs.com.bd",
+            "B": "bdnews24.com",
+            "C": "Guru.com",
+            "D": "yahoo.com"
+          },
+          "correct_answer": "A",
+          "marks": 1
+        },
+        {
+          "question": "Elance কী কাজে ব্যবহৃত হয়?",
+          "options": {
+            "A": "টাকা পাঠানোর জন্য",
+            "B": "মেইল করার জন্য",
+            "C": "ভিডিও কল করার জন্য",
+            "D": "আউটসোর্সিং এর জন্য"
+          },
+          "correct_answer": "D",
+          "marks": 1
+        },
+        {
+          "question": "আউটসোর্সিং হলো—",
+          "options": {
+            "A": "ইন্টারনেটের মাধ্যমে শিক্ষা প্রদান",
+            "B": "ইন্টারনেটের মাধ্যমে মেডিকেল সেবা",
+            "C": "ইন্টারনেটের মাধ্যমে প্রশাসনিক কাজ",
+            "D": "ইন্টারনেটের মাধ্যমে সিটি রিজার্ভ"
+          },
+          "correct_answer": "B",
+          "marks": 1
+        },
+        {
+          "question": "নিম্নের কোন ওয়েবসাইটের মাধ্যমে বিশেষ কোনো পত্রকের সেবা পাওয়া যায়?",
+          "options": {
+            "A": "www.treatmentonline.com",
+            "B": "www.medicinenonline.com",
+            "C": "www.medicalonline.com",
+            "D": "www.popularonline.com"
+          },
+          "correct_answer": "B",
+          "marks": 1
+        },
+        {
+          "question": "রক্তদাতার ঠিকানা নিম্নের কোন ওয়েবসাইটের মাধ্যমে পাওয়া যায়?",
+          "options": {
+            "A": "www.treatmentonline.com",
+            "B": "www.blooddonatedbd.com",
+            "C": "www.blooddonatebd.com",
+            "D": "www.raktodata.com"
+          },
+          "correct_answer": "C",
+          "marks": 1
+        },
+        {
+          "question": "টেলিমেডিসিন সার্ভিসের সাহায্যে কী করা হয়?",
+          "options": {
+            "A": "গল্প করা হয়",
+            "B": "বিশেষজ্ঞ ডাক্তার চিকিৎসা সেবা গ্রহণ করা যায়",
+            "C": "ধূম্র বিক্রি করা হয়",
+            "D": "হাসপাতালের ঠিকানা পাওয়া যায়"
+          },
+          "correct_answer": "B",
+          "marks": 1
+        },
+        {
+          "question": "নিম্নের সার্জারি হলো—",
+          "options": {
+            "A": "রিমোটের মাধ্যমে সার্জারি",
+            "B": "বিশেষজ্ঞ ডাক্তারদের সার্জারি",
+            "C": "রিমোট নিয়ন্ত্রণের দ্বারা সার্জারি",
+            "D": "সাধারণ সার্জারি করা"
+          },
+          "correct_answer": "B",
+          "marks": 1
+        },
+        {
+          "question": "নিম্নের কোন ওয়েবসাইটে ডাক্তারদের ও হাসপাতালদের তথ্য পাওয়া যায়?",
+          "options": {
+            "A": "www.treatmentonline.com",
+            "B": "www.blooddonatebd.com",
+            "C": "www.emedicalpointbd.com",
+            "D": "www.doctorinfo.com"
+          },
+          "correct_answer": "C",
+          "marks": 1
+        },
+        {
+          "question": "ডিজিটাল সার্জারি বলতে বোঝায়—",
+          "options": {
+            "A": "রিমোটের সার্বিক কার্যক্রম ডিজিটাল পদ্ধতিতে সম্পন্ন করা",
+            "B": "সাধারণ মিলিত দূর কাজ করা",
+            "C": "মোবাইলের কোনো মাধ্যমে করা",
+            "D": "৩ জি এর সাহায্যে কাজ করা"
+          },
+          "correct_answer": "A",
+          "marks": 1
+        },
+        {
+          "question": "ERP এর পূর্ণরূপ কী?",
+          "options": {
+            "A": "Enterprise Resource Planning",
+            "B": "Enterprise Remote Planning",
+            "C": "Enterprise Robot Planning",
+            "D": "Enterprise Red Planning"
+          },
+          "correct_answer": "A",
+          "marks": 1
+        },
+        {
+          "question": "নিম্নের কোন সাইটটি অনলাইন নিউজ সাইট?",
+          "options": {
+            "A": "www.paper.com",
+            "B": "www.prothomalo.com",
+            "C": "www.bdnews24.com",
+            "D": "www.news.com"
+          },
+          "correct_answer": "B",
+          "marks": 1
+        },
+        {
+          "question": "অনলাইনের মাধ্যমে ব্যবসা-বাণিজ্যকে কী বলে?",
+          "options": {
+            "A": "ই-বাণিজ্য",
+            "B": "ই-ব্যাংক",
+            "C": "ই-নারী",
+            "D": "ই-ডাক"
+          },
+          "correct_answer": "A",
+          "marks": 1
+        }
+      ]
+    },
+    {
       "chapter_name": "৩য় অধ্যায়",
       "questions": [],
       "mcq": [
