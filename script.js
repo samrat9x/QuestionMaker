@@ -5,59 +5,60 @@ function $(e) {
 function id(e) {
   return document.getElementById(e);
 }
-let printBtn = $("#printBtn");
-printBtn.style.display = "none";
+let printBtn = $("#printBtn"); // Print button
+printBtn.style.display = "none"; // Hide print button initially
 let chaptersData; // Holds the chapters from the fetched JSON file
 let selectedClass = ""; // Stores selected class
 
+// Bangla serial for class selection
 function messages(msg) {
-  $("#message").innerHTML = `<div>${msg}</div>`;
-  id("popup").classList.add("active");
+  $("#message").innerHTML = `<div>${msg}</div>`; // Display messages
+  id("popup").classList.add("active"); // Show popup
 }
 
 // Update class selection
 function updateClassSelection() {
-  selectedClass = id("classSelect").value;
+  selectedClass = id("classSelect").value; // Get selected class
   if (!selectedClass) {
-    messages("অনুগ্রহপূর্বক একটি শ্রেণী নির্বাচন করুন");
-    id("subjectSelect").selectedIndex = 0;
-    id("chapterCheckboxes").innerHTML = "";
-    id("subjectTitle").innerHTML = "";
-    return;
+    messages("অনুগ্রহপূর্বক একটি শ্রেণী নির্বাচন করুন"); // Display message if no class is selected
+    id("subjectSelect").selectedIndex = 0; // Reset subject selection
+    id("chapterCheckboxes").innerHTML = ""; // Clear chapter checkboxes
+    id("subjectTitle").innerHTML = ""; // Clear subject title
+    return; // Exit if no class is selected
   }
-  loadSubjectData();
+  loadSubjectData(); // Load subject data based on selected class
 }
 
 // Load the subject data (fetch the corresponding JSON file based on class and subject)
 function loadSubjectData() {
   if (!selectedClass) {
-    messages("অনুগ্রহপূর্বক প্রথমে একটি শ্রেণী নির্বাচন করুন");
-    id("subjectSelect").selectedIndex = 0;
-    id("chapterCheckboxes").innerHTML = "";
-    id("subjectTitle").innerHTML = "";
-    return;
+    messages("অনুগ্রহপূর্বক প্রথমে একটি শ্রেণী নির্বাচন করুন"); // Display message if no class is selected
+    id("subjectSelect").selectedIndex = 0; // Reset subject selection
+    id("chapterCheckboxes").innerHTML = ""; // Clear chapter checkboxes
+    id("subjectTitle").innerHTML = ""; // Clear subject title
+    return; // Exit if no class is selected
   }
 
   // Set the subject name in the title
-  const selectedSubject = id("subjectSelect").value;
+  const selectedSubject = id("subjectSelect").value; // Get selected subject
   let subject =
-    id("subjectSelect").options[id("subjectSelect").selectedIndex].text;
-  const subjectTitle = id("subjectTitle");
+    id("subjectSelect").options[id("subjectSelect").selectedIndex].text; // Get subject text
+  const subjectTitle = id("subjectTitle"); // Get subject title element
   subjectTitle.innerHTML = selectedSubject
     ? `${subject}<br>${banglaSerial[selectedClass]} শ্রেণী`
-    : "";
+    : ""; // Set subject title based on selected subject
 
   if (selectedSubject) {
-    let url = `data/${selectedClass}/${selectedClass}_${selectedSubject}.json`;
+    let url = `data/${selectedClass}/${selectedClass}_${selectedSubject}.json`; // Construct the URL for the JSON file
     fetch(url)
-      .then((response) => response.json())
+      .then((response) => response.json()) // Parse the JSON response
       .then((data) => {
-        chaptersData = data.chapters;
+        chaptersData = data.chapters; // Store chapters data
         populateChapters(chaptersData); // Populate checkboxes for chapters
       })
       .catch((error) => {
         id("chapterCheckboxes").innerHTML = ""; // Clear checkboxes if no json file found
-        console.error("Error fetching JSON:", error);
+        console.error("Error fetching JSON:", error); // Log error if JSON fetch fails
       });
   } else {
     id("chapterCheckboxes").innerHTML = ""; // Clear checkboxes if no subject is chosen
@@ -66,36 +67,37 @@ function loadSubjectData() {
 
 // Populate chapter checkboxes
 function populateChapters(chapters) {
-  const chapterCheckboxes = id("chapterCheckboxes");
+  const chapterCheckboxes = id("chapterCheckboxes"); // Get chapter checkboxes container
   chapterCheckboxes.innerHTML = ""; // Clear previous checkboxes
 
   chapters.forEach((chapter) => {
     const checkboxLabel = document.createElement("label");
-    checkboxLabel.classList.add("chapter-checkbox");
+    checkboxLabel.classList.add("chapter-checkbox"); // Add class for styling
 
-    const checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    checkbox.value = chapter.chapter_name;
-    checkboxLabel.appendChild(checkbox);
+    const checkbox = document.createElement("input"); // Create checkbox input
+    checkbox.type = "checkbox"; // Set checkbox type
+    checkbox.value = chapter.chapter_name; // Set checkbox value to chapter name
+    checkboxLabel.appendChild(checkbox); // Append checkbox to label
 
-    checkboxLabel.appendChild(document.createTextNode(chapter.chapter_name));
-    chapterCheckboxes.appendChild(checkboxLabel);
+    checkboxLabel.appendChild(document.createTextNode(chapter.chapter_name)); // Append chapter name to label
+    chapterCheckboxes.appendChild(checkboxLabel); // Append label to chapter checkboxes container
   });
 }
 
 // Generate question paper based on selected chapters and total marks
 function generateQuestions() {
-  const cqChecked = id("cq").checked;
-  const mcqChecked = id("mcq").checked;
-  const bothChecked = id("both").checked;
+  const cqChecked = id("cq").checked; // Check if CQ is selected
+  const mcqChecked = id("mcq").checked; // Check if MCQ is selected
+  const bothChecked = id("both").checked; // Check if both CQ and MCQ are selected
 
   const selectedChapters = Array.from(
     document.querySelectorAll("#chapterCheckboxes input:checked")
-  ).map((checkbox) => checkbox.value);
-  const totalMarksInput = parseInt(id("totalMarksInput").value);
-  const questionPaper = id("questionPaper");
+  ).map((checkbox) => checkbox.value); // Get selected chapters from checkboxes
+  const totalMarksInput = parseInt(id("totalMarksInput").value); // Get total marks input and convert to integer
+  const questionPaper = id("questionPaper"); // Get question paper container
   questionPaper.innerHTML = ""; // Clear previous content
 
+  // Check if at least one chapter is selected and total marks input is valid
   if (
     selectedChapters.length === 0 ||
     isNaN(totalMarksInput) ||
@@ -103,74 +105,89 @@ function generateQuestions() {
   ) {
     messages(
       "অনুগ্রহপূর্বক অন্ততপক্ষে একটি অধ্যায় নির্বাচন করুন এবং কত নম্বরের পরীক্ষা নিতে চান সেটি উল্লেখ করুন"
-    );
-    return;
+    ); // Display message if no chapters are selected or total marks input is invalid
+    return; // Exit if no chapters are selected or total marks input is invalid
   }
 
-  let allSelectedQuestions = [];
-  let allMcq = [];
+  let allSelectedQuestions = []; // Holds all selected questions from chapters
+  let allMcq = []; // Array to hold all selected questions and MCQs
 
   // Get questions from selected chapters
   selectedChapters.forEach((chapterName) => {
     const selectedChapter = chaptersData.find(
       (chapter) => chapter.chapter_name === chapterName
-    );
+    ); // Find the selected chapter in chaptersData
     allSelectedQuestions = allSelectedQuestions.concat(
       selectedChapter.questions
-    );
+    ); // Concatenate questions from the selected chapter
     if (selectedChapter.mcq) {
-      allMcq = allMcq.concat(selectedChapter.mcq);
+      allMcq = allMcq.concat(selectedChapter.mcq); // Concatenate MCQs from the selected chapter
     }
-  });
+  }); // End of forEach loop
 
   // console.log(allMcq); // checkpoint 1
 
   // Shuffle questions and select based on total marks
   let shuffledQuestions = shuffleArray(allSelectedQuestions); //----------cq
-  let selectedQuestions = [];
+  let selectedQuestions = []; // Array to hold selected questions
   let shuffledMcq = shuffleArray(allMcq); //------------mcq
-  let selectedMcq = [];
-  let totalMarks = 0;
+  let selectedMcq = []; // Array to hold selected MCQs
+  let totalMarks = 0; // Variable to hold total marks
 
   // console.log(shuffledMcq)
 
   if (cqChecked) {
-    totalMarks = 0;
+    // Check if CQ is selected
+    totalMarks = 0; // Reset total marks for CQ
     for (let i = 0; i < shuffledQuestions.length; i++) {
+      // Loop through shuffled questions
       if (totalMarks + shuffledQuestions[i].marks <= totalMarksInput) {
-        selectedQuestions.push(shuffledQuestions[i]);
-        totalMarks += shuffledQuestions[i].marks;
+        // Check if adding the question's marks exceeds total marks input
+        selectedQuestions.push(shuffledQuestions[i]); // Add question to selected questions
+        totalMarks += shuffledQuestions[i].marks; // Increment total marks
       }
-      if (totalMarks >= totalMarksInput) break;
+      if (totalMarks >= totalMarksInput) break; // Break if total marks reach or exceed input
     }
   }
+
+  // console.log(selectedQuestions); // checkpoint 1
   if (mcqChecked) {
-    totalMarks = 0;
+    // Check if MCQ is selected
+    totalMarks = 0; // Reset total marks for MCQ
     for (let i = 0; i < shuffledMcq.length; i++) {
+      // Loop through shuffled MCQs
       if (totalMarks + shuffledMcq[i].marks <= totalMarksInput) {
-        selectedMcq.push(shuffledMcq[i].question);
-        totalMarks += shuffledMcq[i].marks;
+        // Check if adding the MCQ's marks exceeds total marks input
+        selectedMcq.push(shuffledMcq[i].question); // Add MCQ question to selected MCQs
+        totalMarks += shuffledMcq[i].marks; // Increment total marks
       }
-      if (totalMarks >= totalMarksInput) break;
+      if (totalMarks >= totalMarksInput) break; // Break if total marks reach or exceed input
     }
   }
+  // console.log(selectedMcq); // checkpoint 1
   if (bothChecked) {
-    totalMarks = 0;
+    // Check if both CQ and MCQ are selected
+    totalMarks = 0; // Reset total marks for both CQ and MCQ
     for (let i = 0; i < shuffledMcq.length; i++) {
+      // Loop through shuffled MCQs
       if (totalMarks + shuffledMcq[i].marks <= 15) {
-        selectedMcq.push(shuffledMcq[i].question);
-        totalMarks += shuffledMcq[i].marks;
+        // Check if adding the MCQ's marks exceeds 15
+        selectedMcq.push(shuffledMcq[i].question); // Add MCQ question to selected MCQs
+        totalMarks += shuffledMcq[i].marks; // Increment total marks
       }
       if (totalMarks >= 15) {
-        totalMarks = 0;
-        break;
+        // Break if total marks reach or exceed 15
+        totalMarks = 0; // Reset total marks for CQ
+        break; // Exit the loop for MCQs
       }
     }
     for (let i = 0; i < shuffledQuestions.length; i++) {
-      selectedQuestions.push(shuffledQuestions[i]);
-      totalMarks += shuffledQuestions[i].marks;
+      // Loop through shuffled questions
+      selectedQuestions.push(shuffledQuestions[i]); // Add question to selected questions
+      totalMarks += shuffledQuestions[i].marks; // Increment total marks
       if (shuffledQuestions.length === selectedQuestions.length) {
-        totalMarks = 100;
+        // Check if all questions are selected
+        totalMarks = 100; // Set total marks to 100 for both CQ and MCQ
       }
     }
   }
