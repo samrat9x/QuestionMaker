@@ -324,9 +324,9 @@ function generateQuestions() {
                             </div>
                         </div>
                     `;
-        if (index < 12) {
+        if (index < 15) {
           bothMcq.append(questionBlock);
-        } else if (index >= 12 && index < 30) {
+        } else if (index >= 15 && index < 30) {
           bothMcq2.appendChild(questionBlock);
         }
 
