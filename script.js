@@ -165,6 +165,7 @@ function generateQuestions() {
     }
   }
   // console.log(selectedMcq); // checkpoint 1
+
   if (bothChecked) {
     // Check if both CQ and MCQ are selected
     let mcqMarks = Math.floor(totalMarksInput * 0.3); // Calculate MCQ marks (30% of total) ==> 30% of 100 = 30
@@ -325,7 +326,7 @@ function generateQuestions() {
                     `;
         if (index < 12) {
           bothMcq.append(questionBlock);
-        } else if (index >= 12 && index < 15) {
+        } else if (index >= 12 && index < 30) {
           bothMcq2.appendChild(questionBlock);
         }
 
