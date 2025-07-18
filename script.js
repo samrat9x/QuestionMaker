@@ -324,9 +324,9 @@ function generateQuestions() {
                             </div>
                         </div>
                     `;
-        if (index < 15) {
+        if (index < 12) {
           bothMcq.append(questionBlock);
-        } else if (index >= 15 && index < 30) {
+        } else if (index >= 12 && index < 30) {
           bothMcq2.appendChild(questionBlock);
         }
 
@@ -344,12 +344,10 @@ function generateQuestions() {
 
       // entry cq
       selectedQuestions = shuffleArray(selectedQuestions);
-      const bothMcqShort = document.createElement("div");
-      bothMcqShort.className = "bothMcqShort";
-      const bothShort = document.createElement("div");
-      bothShort.className = "bothShort";
-      const bothBrief = document.createElement("div");
-      bothBrief.className = "bothBrief";
+
+      // const bothShort = document.createElement("div");
+      // bothShort.className = "bothShort";
+
       const bothBroad = document.createElement("div");
       bothBroad.className = "bothBroad";
       let count1 = 1;
@@ -357,30 +355,15 @@ function generateQuestions() {
       let count3 = 1;
       let count4 = 1;
       for (let questionObj of selectedQuestions) {
-        if (questionObj.marks === 1) {
-          if (count1 === 11) continue;
-          bothMcqShort.innerHTML += `<div class="final"><div class="interFinal"><span style="padding-right: 2px;">${
-            banglaNumbers[count1++]
-          }.</span><span>${
-            questionObj.image ? `<img src="${questionObj.image}"><br>` : ""
-          }${questionObj.question}</span></div><div></div></div>`;
-        }
-        if (questionObj.marks === 2) {
-          if (count2 === 11) continue;
-          bothShort.innerHTML += `<div class="final"><div class="interFinal"><span style="padding-right: 2px;">${
-            banglaNumbers[count2++]
-          }.</span><span>${
-            questionObj.image ? `<img src="${questionObj.image}"><br>` : ""
-          }${questionObj.question}</span></div><div></div></div>`;
-        }
-        if (questionObj.marks === 3) {
-          if (count3 === 6) continue;
-          bothBrief.innerHTML += `<div class="final"><div class="interFinal"><span style="padding-right: 2px;">${
-            banglaNumbers[count3++]
-          }.</span><span>${
-            questionObj.image ? `<img src="${questionObj.image}"><br>` : ""
-          }${questionObj.question}</span></div><div></div></div>`;
-        }
+        // if (questionObj.marks === 2) {
+        //   if (count2 === 11) continue;
+        //   bothShort.innerHTML += `<div class="final"><div class="interFinal"><span style="padding-right: 2px;">${
+        //     banglaNumbers[count2++]
+        //   }.</span><span>${
+        //     questionObj.image ? `<img src="${questionObj.image}"><br>` : ""
+        //   }${questionObj.question}</span></div><div></div></div>`;
+        // }
+
         if (questionObj.marks === 8) {
           if (count4 === 9) continue;
           bothBroad.innerHTML += `<div class="final" style="margin-top: 10px;"><div class="interFinal"><span style="padding-right: 2px;">${
@@ -390,20 +373,11 @@ function generateQuestions() {
           }${questionObj.question}</span></div><div></div></div>`;
         }
       }
-      const markDistri2 = document.createElement("div");
-      markDistri2.className = "markDistri2";
-      markDistri2.innerHTML = `<div style="display:flex;justify-content:space-between;"><span style="font-weight:bolder; font-size:11pt;">এককথায় উত্তর দাও :</span><span>১ × ১০ = ১০</span></div>`;
-      bothMcqShort.prepend(markDistri2);
 
-      const markDistri3 = document.createElement("div");
-      markDistri3.className = "markDistri3";
-      markDistri3.innerHTML = `<h3 style="text-align:center;">খ বিভাগ : সংক্ষিপ্ত উত্তর প্রশ্ন</h3><div style="display:flex;justify-content:space-between;"><span style="font-weight:bolder; font-size:11pt;">নিচের প্রশ্নগুলোর উত্তর দাও :</span><span>২ × ১০ = ২০</span></div>`;
-      bothShort.prepend(markDistri3);
-
-      const markDistri4 = document.createElement("div");
-      markDistri4.className = "markDistri4";
-      markDistri4.innerHTML = `<h3 style="text-align:center;">গ বিভাগ : রচনামূলক প্রশ্ন (প্রেক্ষাপটবিহীন)</h3><div style="display:flex;justify-content:space-between;"><span style="font-weight:bolder; font-size:11pt;">যেকোনো তিনটি প্রশ্নের উত্তর দাও :</span><span>৫ × ৩ = ১৫</span></div>`;
-      bothBrief.prepend(markDistri4);
+      // const markDistri3 = document.createElement("div");
+      // markDistri3.className = "markDistri3";
+      // markDistri3.innerHTML = `<h3 style="text-align:center;">খ বিভাগ : সংক্ষিপ্ত উত্তর প্রশ্ন</h3><div style="display:flex;justify-content:space-between;"><span style="font-weight:bolder; font-size:11pt;">নিচের প্রশ্নগুলোর উত্তর দাও :</span><span>২ × ১০ = ২০</span></div>`;
+      // bothShort.prepend(markDistri3);
 
       const markDistri5 = document.createElement("div");
       markDistri5.className = "markDistri5";
@@ -411,7 +385,8 @@ function generateQuestions() {
       bothBroad.prepend(markDistri5);
 
       bothHolder.className = "bothHolder";
-      bothHolder.append(bothMcq2, bothMcqShort, bothShort, bothBrief);
+      // bothHolder.append(bothMcq2, bothShort);
+      bothHolder.append(bothMcq2);
 
       questionPaper.append(bigBothHolder, bothBroad);
     }
