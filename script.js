@@ -167,15 +167,21 @@ function generateQuestions() {
   // console.log(selectedMcq); // checkpoint 1
   if (bothChecked) {
     // Check if both CQ and MCQ are selected
+    let mcqMarks = Math.floor(totalMarksInput * 0.3); // Calculate MCQ marks (30% of total) ==> 30% of 100 = 30
+    let cqMarks = totalMarksInput - mcqMarks; // Calculate CQ marks (remaining 70% of total) ==> 100 - 30 = 70
+    let srijonshil = Math.floor(cqMarks * 0.7143); // Calculate Srijonshil marks (71.43% of CQ marks) ==> 70 * 0.7143 = 50
+    let sonkhiptoProsno = Math.floor(cqMarks * 0.2857); // Calculate Sonkhipto Prosno marks (28.57% of CQ marks) ==> 70 * 0.2857 = 20
+
     totalMarks = 0; // Reset total marks for both CQ and MCQ
+
     for (let i = 0; i < shuffledMcq.length; i++) {
       // Loop through shuffled MCQs
-      if (totalMarks + shuffledMcq[i].marks <= 15) {
+      if (totalMarks + shuffledMcq[i].marks <= mcqMarks) {
         // Check if adding the MCQ's marks exceeds 15
         selectedMcq.push(shuffledMcq[i].question); // Add MCQ question to selected MCQs
         totalMarks += shuffledMcq[i].marks; // Increment total marks
       }
-      if (totalMarks >= 15) {
+      if (totalMarks >= mcqMarks) {
         // Break if total marks reach or exceed 15
         totalMarks = 0; // Reset total marks for CQ
         break; // Exit the loop for MCQs
@@ -289,17 +295,17 @@ function generateQuestions() {
     if (bothChecked) {
       $(
         ".timeandmarks"
-      ).innerHTML = `<span>সময়—৩ ঘন্টা</span><span>পূর্ণমান—${banglaNumbers[totalMarksInput]}</span>`;
+      ).innerHTML = `<span>সময়—৩ ঘন্টা</span><span>পূর্ণমান—${banglaNumbers[totalMarksInput]}</span>`; // Update time and marks for both CQ and MCQ
 
-      id("answers").innerHTML = "";
+      id("answers").innerHTML = ""; // Clear previous answers
 
-      const bothMcq = document.createElement("div");
-      bothMcq.className = "bothMcq";
-      const bothMcq2 = document.createElement("div");
-      const bigBothHolder = document.createElement("div");
-      bigBothHolder.className = "bigBothHolder";
+      const bothMcq = document.createElement("div"); // Create a div for MCQ section
+      bothMcq.className = "bothMcq"; // Set class for styling
+      const bothMcq2 = document.createElement("div"); //  Create a second div for MCQ section
+      const bigBothHolder = document.createElement("div"); // Create a div to hold both MCQ sections
+      bigBothHolder.className = "bigBothHolder"; // Set class for styling
 
-      bothMcq.innerHTML = `<div><h3>ক বিভাগ : নৈর্ব্যক্তিক প্রশ্ন—২৫টি (প্রতিটি প্রশ্নের মান ১)</h3></div><div style="display:flex;justify-content:space-between"><div><span style="font-weight:bolder; font-size:11pt;">বহুনির্বাচনী প্রশ্ন : </span>(সঠিক উত্তরটি খাতায় লিখ)</div><div style="margin-right: 10px">১ × ১৫ = ১৫</div></div>`;
+      bothMcq.innerHTML = `<div><h3>ক বিভাগ : নৈর্ব্যক্তিক প্রশ্ন—২৫টি (প্রতিটি প্রশ্নের মান ১)</h3></div><div style="display:flex;justify-content:space-between"><div><span style="font-weight:bolder; font-size:11pt;">বহুনির্বাচনী প্রশ্ন : </span>(সঠিক উত্তরটি খাতায় লিখ)</div><div style="margin-right: 10px">১ × ১৫ = ১৫</div></div>`; // Set header for MCQ section
 
       selectedMcq.forEach((question, index) => {
         const questionBlock = document.createElement("div");
