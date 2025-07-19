@@ -316,12 +316,20 @@ function generateQuestions() {
                         <p><b>${banglaNumbers[index + 1]}.</b> ${question}</p>
                         <div class="options">
                             <div class="child">
-                                <span>ক) ${shuffledMcq[index].options.A}</span>
-                                <span>গ) ${shuffledMcq[index].options.C}</span>
+                                <span>${"&#9424"} ${
+          shuffledMcq[index].options.A
+        }</span>
+                                <span>${"&#9426"} ${
+          shuffledMcq[index].options.C
+        }</span>
                             </div>
                             <div class="child">
-                                <span>খ) ${shuffledMcq[index].options.B}</span> 
-                                <span>ঘ) ${shuffledMcq[index].options.D}</span>
+                                <span>${"&#9425"} ${
+          shuffledMcq[index].options.B
+        }</span> 
+                                <span>${"&#9427"} ${
+          shuffledMcq[index].options.D
+        }</span>
                             </div>
                         </div>
                     `;
@@ -1004,10 +1012,10 @@ const banglaSerial = {
   class10: "১০ম",
 };
 const englishTobangla = {
-  A: "ক",
-  B: "খ",
-  C: "গ",
-  D: "ঘ",
+  A: "a",
+  B: "b",
+  C: "c",
+  D: "d",
 };
 
 // window onload
