@@ -1024,9 +1024,3 @@ $(".github-corner").addEventListener("click", (e) =>
 id("close-popup").addEventListener("click", () => {
   popup.classList.remove("active"); // Remove the 'active' class to hide the popup
 });
-
-// Footer year
-const today = new Date();
-const yearContainer = document.querySelector(".year-container");
-const currentYear = today.getFullYear();
-yearContainer.textContent = currentYear;
