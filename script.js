@@ -166,12 +166,13 @@ function generateQuestions() {
   }
   // console.log(selectedMcq); // checkpoint 1
 
+  let mcqMarks = Math.floor(totalMarksInput * 0.3); // Calculate MCQ marks (30% of total) ==> 30% of 100 = 30
+  let cqMarks = totalMarksInput - mcqMarks; // Calculate CQ marks (remaining 70% of total) ==> 100 - 30 = 70
+  let srijonshilMarks = Math.floor(cqMarks * 0.7143); // Calculate Srijonshil marks (71.43% of CQ marks) ==> 70 * 0.7143 = 50
+  // let sonkhiptoProsno = Math.floor(cqMarks * 0.2857); // Calculate Sonkhipto Prosno marks (28.57% of CQ marks) ==> 70 * 0.2857 = 20
+  let srijonshilCount = Math.floor(srijonshilMarks / 10) + 3; // Calculate amount of Srijonshil based on cqMarks
   if (bothChecked) {
     // Check if both CQ and MCQ are selected
-    let mcqMarks = Math.floor(totalMarksInput * 0.3); // Calculate MCQ marks (30% of total) ==> 30% of 100 = 30
-    let cqMarks = totalMarksInput - mcqMarks; // Calculate CQ marks (remaining 70% of total) ==> 100 - 30 = 70
-    let srijonshil = Math.floor(cqMarks * 0.7143); // Calculate Srijonshil marks (71.43% of CQ marks) ==> 70 * 0.7143 = 50
-    let sonkhiptoProsno = Math.floor(cqMarks * 0.2857); // Calculate Sonkhipto Prosno marks (28.57% of CQ marks) ==> 70 * 0.2857 = 20
 
     totalMarks = 0; // Reset total marks for both CQ and MCQ
 
@@ -194,7 +195,7 @@ function generateQuestions() {
       totalMarks += shuffledQuestions[i].marks; // Increment total marks
       if (shuffledQuestions.length === selectedQuestions.length) {
         // Check if all questions are selected
-        totalMarks = 100; // Set total marks to 100 for both CQ and MCQ
+        totalMarks = totalMarksInput; // Set total marks to totalMarksInput for both CQ and MCQ
       }
     }
   }
@@ -306,7 +307,7 @@ function generateQuestions() {
       const bigBothHolder = document.createElement("div"); // Create a div to hold both MCQ sections
       bigBothHolder.className = "bigBothHolder"; // Set class for styling
 
-      bothMcq.innerHTML = `<div><h3>ক বিভাগ : নৈর্ব্যক্তিক প্রশ্ন—২৫টি (প্রতিটি প্রশ্নের মান ১)</h3></div><div style="display:flex;justify-content:space-between"><div><span style="font-weight:bolder; font-size:11pt;">বহুনির্বাচনী প্রশ্ন : </span>(সঠিক উত্তরটি খাতায় লিখ)</div><div style="margin-right: 10px">১ × ১৫ = ১৫</div></div>`; // Set header for MCQ section
+      bothMcq.innerHTML = `<div><h3>ক বিভাগ : নৈর্ব্যক্তিক প্রশ্ন—${banglaNumbers[mcqMarks]}টি (প্রতিটি প্রশ্নের মান ১)</h3></div><div style="display:flex;justify-content:space-between"><div><span style="font-weight:bolder; font-size:11pt;">বহুনির্বাচনী প্রশ্ন : </span>(সঠিক উত্তরটি খাতায় লিখ)</div><div style="margin-right: 10px">১ × ${banglaNumbers[mcqMarks]} = ${banglaNumbers[mcqMarks]}</div></div>`; // Set header for MCQ section
 
       selectedMcq.forEach((question, index) => {
         const questionBlock = document.createElement("div");
@@ -350,9 +351,8 @@ function generateQuestions() {
 
       const bothBroad = document.createElement("div");
       bothBroad.className = "bothBroad";
-      let count1 = 1;
+
       let count2 = 1;
-      let count3 = 1;
       let count4 = 1;
       for (let questionObj of selectedQuestions) {
         // if (questionObj.marks === 2) {
@@ -364,8 +364,8 @@ function generateQuestions() {
         //   }${questionObj.question}</span></div><div></div></div>`;
         // }
 
-        if (questionObj.marks === 8) {
-          if (count4 === 9) continue;
+        if (questionObj.marks === 7) {
+          if (count4 === srijonshilCount) continue;
           bothBroad.innerHTML += `<div class="final" style="margin-top: 10px;"><div class="interFinal"><span style="padding-right: 2px;">${
             banglaNumbers[count4++]
           }.</span><span>${
@@ -381,7 +381,11 @@ function generateQuestions() {
 
       const markDistri5 = document.createElement("div");
       markDistri5.className = "markDistri5";
-      markDistri5.innerHTML = `<h3 style="text-align:center;">ঘ বিভাগ : রচনামূলক প্রশ্ন (প্রেক্ষাপটনির্ভর)</h3><div style="display:flex;justify-content:space-between;"><span style="font-weight:bolder; font-size:11pt;">যেকোনো তিনটি প্রশ্নের উত্তর দাও :</span><span>৮ × ৫ = ৪০</span></div>`;
+      markDistri5.innerHTML = `<h3 style="text-align:center;">খ বিভাগ : রচনামূলক প্রশ্ন (প্রেক্ষাপটনির্ভর)</h3><div style="display:flex;justify-content:space-between;"><span style="font-weight:bolder; font-size:11pt;">যেকোনো ${
+        banglaNumbers[srijonshilCount - 3]
+      }টি প্রশ্নের উত্তর দাও :</span><span>${
+        banglaNumbers[srijonshilCount - 3]
+      } × ১০ = ${banglaNumbers[(srijonshilCount - 3) * 10]}</span></div>`;
       bothBroad.prepend(markDistri5);
 
       bothHolder.className = "bothHolder";
@@ -1020,3 +1024,9 @@ $(".github-corner").addEventListener("click", (e) =>
 id("close-popup").addEventListener("click", () => {
   popup.classList.remove("active"); // Remove the 'active' class to hide the popup
 });
+
+// Footer year
+const today = new Date();
+const yearContainer = document.querySelector(".year-container");
+const currentYear = today.getFullYear();
+yearContainer.textContent = currentYear;
