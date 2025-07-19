@@ -48,13 +48,6 @@
       async
       src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
     ></script>
-    <script>
-      // Footer year
-      const today = new Date();
-      const yearContainer = document.querySelector(".year-container");
-      const currentYear = today.getFullYear();
-      yearContainer.textContent = currentYear;
-    </script>
   </head>
   <body>
     <div id="loading">
@@ -241,5 +234,12 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+      // Footer year
+      const today = new Date();
+      const yearContainer = document.querySelector(".year-container");
+      const currentYear = today.getFullYear();
+      yearContainer.textContent = currentYear;
+    </script>
   </body>
 </html>
